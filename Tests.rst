@@ -12,7 +12,10 @@ To create the authentication file .htpasswd and add a user with the username `te
     $ htpasswd -c -B .htpasswd test
     $ <enter password `testtesttest` when prompted to set a password for the user>
 
-Run the tests locally (remember to clean your Mothership environment first by running :code:`./mothership serve --clean`):
+Run the tests locally
+---------------------
+
+(Remember to clean your Mothership environment first by running :code:`./mothership serve --clean`)
 
 ::
 
@@ -20,7 +23,8 @@ Run the tests locally (remember to clean your Mothership environment first by ru
 
 The -tags option can be blank, :code:`all` or :code:`integration`, based on which tests you want to run.
 
-Run the tests with Docker:
+Run the tests with Docker
+-------------------------
 
 ::
 
