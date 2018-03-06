@@ -21,11 +21,11 @@ Installation
 Setup authentication
 ~~~~~~~~~~~~~~~~~~~~
 
-If you want to run your Mothership with authentication, you need to create a .htpasswd file with one or more users:
+If you want to run your Mothership with authentication (this is default), you need to create a .htpasswd file with one or more users:
 
 ::
 
-    $ htpasswd -c -B .htpasswd myuser // Create a .htpasswd file and add a new user with username myuser
+    $ htpasswd -c -B .htpasswd myuser // create a .htpasswd file and add a the user myuser
 
 You will then be prompted to enter a password. Do this.
 
@@ -38,7 +38,7 @@ To add additional users or modify existing ones, leave out the -c option:
 Setup TLS
 ~~~~~~~~~
 
-To enable TLS, you need to generate a certificate and a key file in your mothership folder:
+If you want to run your Mothership with TLS (this is default), you need to generate a certificate and a key file in your mothership folder:
 
 ::
 
@@ -80,14 +80,15 @@ Start your Mothership
     $ cd $GOPATH/mothership
     $ ./mothership serve
 
-If you want to start with a fresh Mothership, meaning you want to delete the images and files you created the last time you ran your Mothership, you can add the --clean option:
+If you want to start with a fresh Mothership, meaning you want to delete the images and files you created the last time you ran your Mothership, you can add the :code:`--clean` option:
 
 ::
 
     $ ./mothership serve --clean
 
-| By default the Mothership is also started with the native builder, meaning to build images with your local IncludeOS installation.
-| If you want to build your images using Docker, you can add the --builder docker option:
+By default the Mothership is also started with the native builder, meaning to build images with your local IncludeOS installation.
+
+If you want to build your images using Docker, you can add the :code:`--builder docker` option:
 
 ::
 
@@ -95,8 +96,9 @@ If you want to start with a fresh Mothership, meaning you want to delete the ima
 
 To exit the application, press :code:`Ctrl + c`
 
-| The default settings when starting a Mothership is to start it with basic authentication and TLS enabled.
-| If you want to disable authentication and TLS (which you rarely want to), you can start your Motherhip with the following command:
+The default settings when starting a Mothership is to start it with basic authentication and TLS enabled.
+
+If you want to disable authentication and TLS (which you rarely want to), you can start your Motherhip with the following command:
 
 ::
 
@@ -125,7 +127,7 @@ If you want Docker to handle everything for you, from the mothership_client to t
     $ ./build_mothership.sh // instead of `go build mothership.go`
     $ docker run --privileged --detach --name mothership --rm --publish 9090:9090 --publish 8080:8080 mothership
 
-You can exclude the --detach flag if you want to see the Mothership log output. Then you exit the container by pressing :code:`Ctrl + c`
+You can exclude the :code:`--detach` flag if you want to see the Mothership log output. Then you exit the container by pressing :code:`Ctrl + c`
 
 If you want to run the Mothership in Docker but want to change some of the default settings mentioned above, you just add :code:`serve` at the end, followed by the Mothership options you want to change:
 
@@ -167,9 +169,11 @@ Clean up your Docker environment:
 The website
 -----------
 
-| When you have come this far, or if you want to connect to a public Mothership that is already running, you can open your browser and go to the Mothership's website.
-| If you are running a Mothership locally, you will find your Mothership's website by going to `https://localhost:8080 <https://localhost:8080>`__ if you have started your Mothership with TLS enabled.
-| If you have started your Mothership without TLS, you will find the website at `http://localhost:8080 <http://localhost:8080>`__.
+When you have come this far, or if you want to connect to a public Mothership that is already running, you can open your browser and go to the Mothership's website.
+
+If you are running a Mothership locally, you will find your Mothership's website by going to `https://localhost:8080 <https://localhost:8080>`__ if you have started your Mothership with TLS enabled.
+
+If you have started your Mothership without TLS, you will find the website at `http://localhost:8080 <http://localhost:8080>`__.
 
 Here, if the Mothership was started with authentication enabled, you will see a Login-button:
 
