@@ -1,13 +1,14 @@
 IncludeOS Mothership
 ====================
 
-IncludeOS **Mothership** is a management platform for IncludeOS applications.
+**Mothership** is a management platform for IncludeOS applications.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    Getting-started
+   Tests
 
 ..
     Indices and tables
