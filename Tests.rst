@@ -3,7 +3,8 @@
 Tests
 =====
 
-**Note**: If the tests are run with authentication (as they are by default), you need to add a user to the mothership/.htpasswd file with the username `test` and the password `testtesttest` for the tests to pass.
+**Note**: If the tests are run with authentication (as they are by default), you need to add a user to the
+mothership/.htpasswd file with the username `test` and the password `testtesttest` for the tests to pass.
 To create the authentication file .htpasswd and add a user with the username `test` to it:
 
 ::

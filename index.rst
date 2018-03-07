@@ -10,8 +10,8 @@ IncludeOS Mothership
    Getting-started
    Your-first-instance
    Update-your-instance
-   Tests
    Hypervisors
+   Tests
 
 ..
     Indices and tables

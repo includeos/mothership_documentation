@@ -3,7 +3,8 @@
 Hypervisors
 ===========
 
-Mothership has built in support for launching a binary on multiple hypervisors. To do this it has dependencies on tools for each particular hypervisor.
+Mothership has built in support for launching a binary on multiple hypervisors. To do this it has dependencies on tools
+for each particular hypervisor.
 
 Vcloud
 ------
