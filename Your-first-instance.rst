@@ -121,4 +121,4 @@ forwarding you have to run the following commands (on macOS):
 An alternative to turning on IP forwarding in this case however (with a Mothership running on localhost), is to
 create an uplink with URL 10.0.0.1:9090 and build an image with that. Then you only need to run
 :code:`boot Starbase-nacl-0 --create-bridge`, and the instance will connect to the Mothership.
-You only need to add the `--create-bridge` option once.
+You only need to add the :code:`--create-bridge` option once.
