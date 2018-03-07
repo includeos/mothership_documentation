@@ -3,6 +3,8 @@
 Getting started
 ===============
 
+
+
 Installation
 ------------
 
@@ -14,6 +16,7 @@ Installation
 ::
 
     $ cd $GOPATH
+    $ mkdir -p src/github.com/includeos && cd src/github.com/includeos
     $ git clone git@github.com:includeos/mothership.git
     $ dep ensure
     $ go build mothership.go
@@ -38,7 +41,7 @@ To add additional users or modify existing ones, leave out the -c option:
 Setup TLS
 ~~~~~~~~~
 
-If you want to run your Mothership with TLS (this is default), you need to generate a certificate and a key file in your mothership folder:
+If you want to run your Mothership with TLS (this is default), you need to generate a certificate and a key file in your mothership directory:
 
 ::
 
@@ -49,7 +52,7 @@ The Mothership GUI client
 
 ::
 
-    $ git clone git@github.com:includeos/mothership_client.git // f.ex. in your HOME folder
+    $ git clone git@github.com:includeos/mothership_client.git // f.ex. in your HOME directory
 
 MacOS
 
@@ -77,7 +80,7 @@ Start your Mothership
 
 ::
 
-    $ cd $GOPATH/mothership
+    $ cd $GOPATH/src/github.com/includeos/mothership
     $ ./mothership serve
 
 If you want to start with a fresh Mothership, meaning you want to delete the images and files you created the last time you ran your Mothership, you can add the :code:`--clean` option:
@@ -118,7 +121,7 @@ Start your Mothership in a Docker container
 
 ::
 
-    $ cd $GOPATH/mothership
+    $ cd $GOPATH/src/github.com/includeos/mothership
 
 If you want Docker to handle everything for you, from the mothership_client to the IncludeOS installation, you can do the following:
 

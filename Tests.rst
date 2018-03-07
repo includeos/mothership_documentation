@@ -8,7 +8,7 @@ To create the authentication file .htpasswd and add a user with the username `te
 
 ::
 
-    $ cd $GOPATH/mothership
+    $ cd $GOPATH/src/github.com/includeos/mothership
     $ htpasswd -c -B .htpasswd test
     $ <enter password `testtesttest` when prompted to set a password for the user>
 
