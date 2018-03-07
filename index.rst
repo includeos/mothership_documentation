@@ -9,6 +9,7 @@ IncludeOS Mothership
 
    Getting-started
    Tests
+   Hypervisors
 
 ..
     Indices and tables
