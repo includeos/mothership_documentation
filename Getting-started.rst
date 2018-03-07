@@ -3,8 +3,6 @@
 Getting started
 ===============
 
-
-
 Installation
 ------------
 
@@ -191,11 +189,3 @@ This username and password must match one of the entries in the previously creat
 If no authentication is required, you will be sent straight to the Instances page:
 
 .. image:: _static/images/instances-start.png
-
-Build and start your first IncludeOS instance
----------------------------------------------
-
-.. Connect to a mothership (uplink)
-
-Update your IncludeOS instance
-------------------------------

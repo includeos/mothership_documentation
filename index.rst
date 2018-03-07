@@ -8,6 +8,8 @@ IncludeOS Mothership
    :caption: Contents:
 
    Getting-started
+   Your-first-instance
+   Update-your-instance
    Tests
    Hypervisors
 
