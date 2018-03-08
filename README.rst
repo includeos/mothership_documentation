@@ -7,7 +7,7 @@ Hosted by `Read the Docs <https://docs.readthedocs.io/en/latest/>`__
 
 	$ git clone git@github.com:AnnikaH/mothership_documentation.git
 	$ cd mothership_documentation
-	$ pip install sphinx sphinx-autobuild
+	$ pip install sphinx sphinx-autobuild sphinx_rtd_theme
 	$ <make your changes>
 	$ make html
 	$ open _build/html/<Your-updated-file>.html // to test your changes
