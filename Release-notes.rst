@@ -15,7 +15,7 @@ Internal improvements
 GUI
 ~~~
 
-- Search functionality on the Instances, Images and NaCl page
+- Search functionality on the Instances, Images and NaCl pages
     - Instance search targets:
         - ID
         - UUID
@@ -33,5 +33,5 @@ GUI
         - ID
         - Name
         - Content
-- Pagination on the Instances, Images and NaCl page (20 elements per page)
+- Pagination on the Instances, Images and NaCl pages (20 elements per page)
 - Description field added per instance, which is persistent
