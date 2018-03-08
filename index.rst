@@ -12,6 +12,7 @@ IncludeOS Mothership
    Update-your-instance
    Hypervisors
    Tests
+   Release-notes
 
 ..
     Indices and tables
