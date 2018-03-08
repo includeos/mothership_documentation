@@ -133,17 +133,16 @@ do the following:
 ::
 
     $ ./build_mothership.sh // instead of `go build mothership.go`
-    $ docker run --privileged --detach --name mothership --rm --publish 9090:9090 --publish 8080:8080 mothership
+    $ docker run --privileged --name mothership --rm --publish 9090:9090 --publish 8080:8080 mothership
 
-You can exclude the :code:`--detach` flag if you want to see the Mothership log output. Then you exit the container
-by pressing :code:`Ctrl + c`
+Exit the container by pressing :code:`Ctrl + c`.
 
 If you want to run the Mothership in Docker but want to change some of the default settings mentioned above, you just
 add :code:`serve` at the end, followed by the Mothership options you want to change:
 
 ::
 
-    $ docker run --privileged --detach --name mothership --rm --publish 9090:9090 --publish 8080:8080 mothership serve --builder docker
+    $ docker run --privileged --name mothership --rm --publish 9090:9090 --publish 8080:8080 mothership serve --builder docker
 
 If you get a Conflict message when starting your Mothership in Docker, a previously started mothership container may
 not have exited properly. If so, you can remove it by:
