@@ -7,6 +7,7 @@ IncludeOS Mothership
    :maxdepth: 2
    :caption: Contents:
 
+   Quick-start
    Getting-started
    Your-first-instance
    Update-your-instance

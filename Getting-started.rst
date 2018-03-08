@@ -37,6 +37,9 @@ To add additional users or modify existing ones, leave out the -c option:
 
     $ htpasswd -B .htpasswd anotheruser
 
+
+.. _setup-tls:
+
 Setup TLS
 ~~~~~~~~~
 
