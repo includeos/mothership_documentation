@@ -21,6 +21,11 @@ GUI
 
 - Search functionality on the Instances, Images and NaCl pages
 
+    - Image search targets:
+        - Checksum (ID)
+        - Name
+        - OS version
+        - NaCl name
     - Instance search targets:
         - ID
         - UUID
@@ -29,11 +34,6 @@ GUI
         - IP addresses
         - Running image's checksum (ID)
         - Devices
-    - Image search targets:
-        - Checksum (ID)
-        - Name
-        - OS version
-        - NaCl name
     - NaCl search targets:
         - ID
         - Name
