@@ -13,12 +13,12 @@ Dependencies
 Mothership comes with basic authentication enabled by default. It is therefore necessary to create a user:
 ::
 
-    $ touch .htpasswd               # Create empty .htpasswd file
-    $ htpasswd -B .htpasswd myuser  # Add the user myuser
+    $ touch config_files/.htpasswd               # Create empty .htpasswd file
+    $ htpasswd -B config_files/.htpasswd myuser  # Add the user myuser
 
 2. Configure TLS
 ----------------
-TLS is also enabled by default. Mothership expects two files to be present in your directory:
+TLS is also enabled by default. Mothership expects two files to be present in the folder ``config_files``:
 
 :cert.pem: File containing your certificate
 :key.pem: File containing your private key
@@ -34,8 +34,9 @@ First build then then run mothership using docker::
         --name mothership \
         -p 8080:8080 \
         -p 9090:9090 \
+        -v $PWD/config_files:/home/ubuntu/mothership/config_files \
+        -v mothership_storage:/home/ubuntu/mothership/runtime_files \
         -v /var/run/docker.sock:/var/run/docker.sock \
-        -v $PWD:/home/ubuntu/mothership/ \
         mothership serve
 
 The options used are::
@@ -44,8 +45,9 @@ The options used are::
         --name mothership                   Give docker container name
         -p 8080:8080                        Forward port 8080
         -p 9090:9090                        Forward port 9090
+        -v $PWD/config_files:/home/ubuntu/mothership/config_files   Bind-mount config_files folder into mothership
+        -v mothership_storage:/home/ubuntu/mothership/runtime_files Mount named volume into mothership
         -v /var/run/docker.sock:/var/run/docker.sock  Mount hosts docker process into container
-        -v $PWD:/home/ubuntu/mothership/    Mount local dir into docker container
     Then the mothership options:
         mothership serve                    Start mothership server
 
