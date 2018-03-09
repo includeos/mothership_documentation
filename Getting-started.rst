@@ -136,7 +136,11 @@ do the following:
 ::
 
     $ ./build_mothership.sh // instead of `go build mothership.go`
-    $ docker run --privileged --name mothership --rm --publish 9090:9090 --publish 8080:8080 mothership
+    $ docker run --name mothership --publish 9090:9090 --publish 8080:8080 \
+    -v $PWD/config_files:/home/ubuntu/mothership/config_files \
+    -v mothership_storage:/home/ubuntu/mothership/runtime_files \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    mothership
 
 Exit the container by pressing :code:`Ctrl + c`.
 
@@ -145,10 +149,13 @@ add :code:`serve` at the end, followed by the Mothership options you want to cha
 
 ::
 
-    $ docker run --privileged --name mothership --rm --publish 9090:9090 --publish 8080:8080 mothership serve --builder docker
+    $ docker run --name mothership --publish 9090:9090 --publish 8080:8080 \
+    -v $PWD/config_files:/home/ubuntu/mothership/config_files \
+    -v mothership_storage:/home/ubuntu/mothership/runtime_files \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    mothership serve --builder docker
 
-If you get a Conflict message when starting your Mothership in Docker, a previously started mothership container may
-not have exited properly. If so, you can remove it by:
+If you get a Conflict message when starting your Mothership in Docker, remove the previously created container:
 
 ::
 
