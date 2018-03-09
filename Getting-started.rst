@@ -37,8 +37,11 @@ To add additional users or modify existing ones, leave out the -c option:
 
     $ htpasswd -B .htpasswd anotheruser
 
-Setup TLS
-~~~~~~~~~
+
+.. _self-signed-tls:
+
+Create self signed TLS certificate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you want to run your Mothership with TLS (this is default), you need to generate a certificate and a key file in
 your mothership directory:
@@ -175,6 +178,8 @@ Clean up your Docker environment:
 
     $ docker system prune
     $ <answer y when asked if you want to continue>
+
+.. _the-website:
 
 The website
 -----------
