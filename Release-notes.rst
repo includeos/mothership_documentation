@@ -6,12 +6,6 @@ Release notes
 v0.12 March 2018
 ----------------
 
-Internal improvements
-~~~~~~~~~~~~~~~~~~~~~
-
-- Authentication, TLS and docker builder are default when starting Mothership
-- Improved logging
-
 GUI
 ~~~
 
@@ -48,3 +42,9 @@ GUI
 - Pagination on the Instances, Images and NaCl pages (20 elements per page)
 
 .. image:: _static/images/release-notes-v0.12/pagination.png
+
+Internal improvements
+~~~~~~~~~~~~~~~~~~~~~
+
+- Authentication, TLS and docker builder are default when starting Mothership
+- Improved logging
