@@ -23,11 +23,11 @@ Setup authentication
 ~~~~~~~~~~~~~~~~~~~~
 
 If you want to run your Mothership with authentication (this is default), you need to create a .htpasswd file with one
-or more users:
+or more users within the config_files directory:
 
 ::
 
-    $ htpasswd -c -B .htpasswd myuser // create a .htpasswd file and add the user myuser
+    $ htpasswd -c -B config_files/.htpasswd myuser // create a .htpasswd file and add the user myuser
 
 You will then be prompted to enter a password. Do this.
 
@@ -35,7 +35,7 @@ To add additional users or modify existing ones, leave out the -c option:
 
 ::
 
-    $ htpasswd -B .htpasswd anotheruser
+    $ htpasswd -B config_files/.htpasswd anotheruser
 
 
 .. _self-signed-tls:
@@ -48,7 +48,7 @@ your mothership directory:
 
 ::
 
-    $ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+    $ openssl req -x509 -newkey rsa:4096 -keyout config_files/key.pem -out config_files/cert.pem -days 365 -nodes
 
 The Mothership GUI client
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -200,7 +200,7 @@ When clicking on this, a popup will appear, asking you to fill in your username 
 
 .. image:: _static/images/login.png
 
-This username and password must match one of the entries in the previously created mothership/.htpasswd file.
+This username and password must match one of the entries in the previously created mothership/config_files/.htpasswd file.
 
 If no authentication is required, you will be sent straight to the Instances page:
 
