@@ -15,7 +15,12 @@ Internal improvements
 GUI
 ~~~
 
+- Description field added per instance, which is persistent
+
+.. image:: _static/images/release-notes-v0.12/instance-description.png
+
 - Search functionality on the Instances, Images and NaCl pages
+
     - Instance search targets:
         - ID
         - UUID
@@ -33,5 +38,13 @@ GUI
         - ID
         - Name
         - Content
+
+.. image:: _static/images/release-notes-v0.12/search-images.png
+
+.. image:: _static/images/release-notes-v0.12/search-instances.png
+
+.. image:: _static/images/release-notes-v0.12/search-nacl.png
+
 - Pagination on the Instances, Images and NaCl pages (20 elements per page)
-- Description field added per instance, which is persistent
+
+.. image:: _static/images/release-notes-v0.12/pagination.png
