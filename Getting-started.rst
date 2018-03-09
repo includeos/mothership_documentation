@@ -181,6 +181,26 @@ Clean up your Docker environment:
 
 .. _the-website:
 
+Curl
+----
+
+To perform authenticated requests with TLS using curl (which is default when starting Mothership), add the `-u` flag to your curl commands:
+
+```
+curl -u <username>:<password> https://localhost:8080/images -k
+```
+
+CLI
+---
+
+To enable the CLI commands to send your credentials when making requests, you can either add the `--username` and `--password` flags to your CLI commands,
+or perform `./mothership init` to have the client prompt you for your credentials and store them in a config file for future CLI commands.
+
+```
+./mothership images --username <username> --password <password>
+```
+
+
 The website
 -----------
 
