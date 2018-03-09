@@ -37,17 +37,16 @@ First build then then run mothership using docker::
         -v $PWD:/home/ubuntu/mothership/ \
         mothership serve
 
-The commands before ``mothership`` are **docker** options::
+The options used are::
 
-    --name mothership                   Give docker container name
-    -p 8080:8080                        Forward port 8080
-    -p 9090:9090                        Forward port 9090
-    -v /var/run/docker.sock:/var/run/docker.sock  Mount hosts docker process into container
-    -v $PWD:/home/ubuntu/mothership/    Mount local dir into docker container
-
-The commands after ``mothership`` are **mothership** options::
-
-    mothership serve                    Start mothership server
+    First are the docker options:
+        --name mothership                   Give docker container name
+        -p 8080:8080                        Forward port 8080
+        -p 9090:9090                        Forward port 9090
+        -v /var/run/docker.sock:/var/run/docker.sock  Mount hosts docker process into container
+        -v $PWD:/home/ubuntu/mothership/    Mount local dir into docker container
+    Then the mothership options:
+        mothership serve                    Start mothership server
 
 This will launch the mothership server. Make sure there are no errors in the launch output and the two following lines indicates that basic auth and TLS are properly configured::
 
@@ -61,7 +60,7 @@ There are three ways to interact with the Mothership server.
 Web GUI
     This GUI is available at: `https://localhost:8080 <https://localhost:8080>`__, for more information on this please see: :ref:`Mothership GUI<the-website>`.
 Command-line interface
-    The binary ``mothership-linux-amd64`` used to launch the server also works as a CLI. 
+    The binary ``mothership-linux-amd64`` used to launch the server also works as a CLI.
 API
     For more information on the various API endpoints see `Apidocs <https://127.0.0.1:8080/apidocs/apidocs.html>`__
 
