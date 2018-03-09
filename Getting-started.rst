@@ -38,10 +38,10 @@ To add additional users or modify existing ones, leave out the -c option:
     $ htpasswd -B .htpasswd anotheruser
 
 
-.. _setup-tls:
+.. _self-signed-tls:
 
-Setup TLS
-~~~~~~~~~
+Create self signed TLS certificate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you want to run your Mothership with TLS (this is default), you need to generate a certificate and a key file in
 your mothership directory:

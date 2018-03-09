@@ -4,28 +4,28 @@ Quick start
 ===========
 
 Dependencies
-------------
-- Docker
-- htpasswd
+---------------
+- `Docker <https://docs.docker.com/install/>`__
+- `htpasswd <https://httpd.apache.org/docs/2.4/programs/htpasswd.html>`__
 
-Create user
------------
+1  Create user
+--------------
 Mothership comes with basic auth authentication enabled by default. It is therefore necessary to create a user::
 
-    $ htpasswd -c -B .htpasswd myuser // create a .htpasswd file and add the user myuser
+    $ touch .htpasswd               # Create empty .htpasswd file
+    $ htpasswd -B .htpasswd myuser  # Add the user myuser
 
-TLS
----
+2  Configure TLS
+----------------
 TLS is also enabled by default. Mothership expects two files to be present in your directory:
 
 :cert.pem: File containing your certificate.
 :key.pem: File containing your private key
 
-For instructions on how to generate a local certificate for testing see: :ref:`setup-tls`
+For instructions on how to generate a self signed certificate for testing see: :ref:`self-signed-tls`
 
-
-Build and launch Mothership
----------------------------
+3  Build and launch Mothership
+------------------------------
 First build then then run mothership using docker::
 
     $ docker build -t mothership .
