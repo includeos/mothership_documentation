@@ -188,7 +188,7 @@ Clean up your Docker environment:
 
 .. _the-website:
 
-Curl
+cURL
 ----
 
 To perform authenticated requests with TLS using curl (which is default when starting Mothership), add the :code:`-u` flag to your curl commands:

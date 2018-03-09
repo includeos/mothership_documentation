@@ -13,4 +13,4 @@ Hosted by `Read the Docs <https://docs.readthedocs.io/en/latest/>`__
 	$ open _build/html/<Your-updated-file>.html // to test your changes
 	$ <commit your changes>
 
-After you have created a pull request and your changes have been merged, `includeos-mothership.readthedocs.io <http://includeos-mothership.readthedocs.io>`__ will get updated automatically.
+After you have created a pull request and your changes have been merged, `includeos-mothership.readthedocs.io <https://includeos-mothership.readthedocs.io>`__ will get updated automatically.

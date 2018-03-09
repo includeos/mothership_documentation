@@ -41,7 +41,7 @@ The newly created NaCl file is displayed in the list if the NaCl content doesn't
 -------------------
 
 If you are running Mothership with the native builder, you need to have IncludeOS installed on your machine. The
-IncludeOS documentation can be found `here <http://includeos.readthedocs.io>`__.
+IncludeOS documentation can be found `here <https://includeos.readthedocs.io>`__.
 
 **Go to the Build page**
 
