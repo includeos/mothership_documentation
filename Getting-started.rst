@@ -179,6 +179,8 @@ Clean up your Docker environment:
     $ docker system prune
     $ <answer y when asked if you want to continue>
 
+.. _the-website:
+
 The website
 -----------
 
