@@ -1,23 +1,11 @@
-.. _Getting started:
+.. _Mothership-server:
 
-Getting started
-===============
+Mothership server
+=================
 
-Installation
-------------
-
-- Install `Go 1.10 <https://golang.org/dl/>`__
-- Install `Docker <https://docs.docker.com/install/>`__
-- Install `dep <https://golang.github.io/dep/>`__ (:code:`brew install dep` on macOS)
-- Install `htpasswd <https://httpd.apache.org/docs/2.4/programs/htpasswd.html>`__ if you want to run your Mothership with authentication
-
-::
-
-    $ cd $GOPATH
-    $ mkdir -p src/github.com/includeos && cd src/github.com/includeos
-    $ git clone git@github.com:includeos/mothership.git
-    $ dep ensure
-    $ go build mothership.go
+Configuration
+-------------
+All mothership configuration files should be placed in the folder: ``config_files``
 
 Setup authentication
 ~~~~~~~~~~~~~~~~~~~~
@@ -50,33 +38,7 @@ your mothership directory:
 
     $ openssl req -x509 -newkey rsa:4096 -keyout config_files/key.pem -out config_files/cert.pem -days 365 -nodes
 
-The Mothership GUI client
-~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
-
-    $ git clone git@github.com:includeos/mothership_client.git // f.ex. in your HOME directory
-
-MacOS
-
-::
-
-    $ brew install node
-    $ brew install npm
-    $ npm install -g webpack@2.6.1
-    $ npm install
-    $ ./copyfiles.sh
-
-Ubuntu
-
-::
-
-    $ sudo apt install npm
-    $ sudo npm install -g n // webpack needs the node command as opposed to nodejs. The npm n tool should fix that.
-    $ sudo n stable
-    $ sudo npm install -g webpack@2.6.1
-    $ sudo npm install
-    $ ./copyfiles.sh
 
 Start your Mothership
 ---------------------
@@ -232,3 +194,21 @@ This username and password must match one of the entries in the previously creat
 If no authentication is required, you will be sent straight to the Instances page:
 
 .. image:: _static/images/instances-start.png
+
+Mothership server options
+-------------------------
+
+To provide options to mothership there are two possibilities:
+
+1. Launch parameters to ``mothership serve``. Options use the ``--<option>`` format.
+2. Options in config file: ``config_files/config.yaml`` supplied in a ``key: value``.
+
+Notable options are::
+
+      --builder string               builder type: native or docker (default "native")
+      --certfile string              Certificate file for TLS
+      --clean                        <bool, optional> clean everything
+      --keyfile string               Private key file for TLS
+      --serverauth string            server auth method (default "none")
+      --serverport string            port number (default "8080")
+      --verboselogging               <bool, optional> verbose logging

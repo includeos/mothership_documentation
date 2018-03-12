@@ -8,11 +8,10 @@ IncludeOS Mothership
    :caption: Contents:
 
    Quick-start
-   Getting-started
-   Your-first-instance
-   Update-your-instance
-   Hypervisors
-   Tests
+   Mothership-server
+   Mothership-cli
+   Using-mothership
+   Developer-info
    Release-notes
 
 ..

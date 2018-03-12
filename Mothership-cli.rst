@@ -1,22 +1,27 @@
-.. _Hypervisors:
+.. _Mothership-cli:
+
+Mothership cli
+==============
+
+.. _hypervisors:
 
 Hypervisors
-===========
+-----------
 
 Mothership has built in support for launching a binary on multiple hypervisors. To do this it has dependencies on tools
 for each particular hypervisor.
 
 Vcloud
-------
+^^^^^^
 
 Dependencies
-~~~~~~~~~~~~
+""""""""""""
 
 - Install `ovftool <https://www.vmware.com/support/developer/ovf/>`__ (Requires a vmware account)
 - Install `Docker <https://docs.docker.com/install/>`__ (Used to add grub bootloader)
 
 Environment variables
-~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""
 
 The following environment variables will have to be set in order for Vcloud to function.
 
@@ -25,7 +30,7 @@ The following environment variables will have to be set in order for Vcloud to f
 :vcloudPassword: Password for vcloud
 
 Launch options
-~~~~~~~~~~~~~~
+"""""""""""""""""""""
 
 Mothership needs the following parameters set for launch
 ::
@@ -40,7 +45,7 @@ Mothership needs the following parameters set for launch
 
 
 Launch Command
-~~~~~~~~~~~~~~
+"""""""""""""""""""""
 
 The final launch command will look like this:
 ::
@@ -53,7 +58,7 @@ The final launch command will look like this:
           <elf-binary-to-boot>
 
 Multiple network interfaces
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""""""""
 
 To have multiple network interfaces in your application create a ``vm.json`` in the same folder that ``launch`` is called from.
 
