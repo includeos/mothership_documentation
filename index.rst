@@ -10,8 +10,7 @@ IncludeOS Mothership
    Quick-start
    Mothership-server
    Mothership-cli
-   Your-first-instance
-   Update-your-instance
+   Using-mothership
    Developer-info
    Release-notes
 

@@ -1,10 +1,13 @@
-.. _Your first IncludeOS instance:
+.. _Using-mothership:
+
+Using Mothership
+================
 
 Your first IncludeOS instance
-=============================
+-----------------------------
 
 1. Create a configuration for your instance
--------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Go to the NaCl page**
 
@@ -38,7 +41,7 @@ The newly created NaCl file is displayed in the list if the NaCl content doesn't
 .. image:: _static/images/nacl-with-content.png
 
 2. Build your image
--------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you are running Mothership with the native builder, you need to have IncludeOS installed on your machine. The
 IncludeOS documentation can be found `here <https://includeos.readthedocs.io>`__.
@@ -83,11 +86,11 @@ Click on an image's More-button for more information about the image:
 .. image:: _static/images/images-more.png
 
 3. Boot
--------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After you have downloaded the image, you can launch it on your preferred hypervisor (the
 :code:`./mothership launch --hypervisor <hypervisor> <ELF-binary>` command is useful here - see our
-:doc:`Hypervisors` documentation), or you can boot it up locally:
+:ref:`hypervisors` documentation), or you can boot it up locally:
 
 .. ip forwarding on if uplink 192...., else 10.0.0.1 f.ex.
 .. vm.json (net devices, specify uuid if booting locally on mac f.ex.)
@@ -122,3 +125,7 @@ An alternative to turning on IP forwarding in this case however (with a Mothersh
 create an uplink with URL 10.0.0.1:9090 and build an image with that. Then you only need to run
 :code:`boot Starbase-nacl-0 --create-bridge`, and the instance will connect to the Mothership.
 You only need to add the :code:`--create-bridge` option once.
+
+
+Update your IncludeOS instance
+------------------------------
