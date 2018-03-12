@@ -4,7 +4,7 @@ Quick start
 ===========
 
 Dependencies
----------------
+------------
 - `Docker <https://docs.docker.com/install/>`__
 - `htpasswd <https://httpd.apache.org/docs/2.4/programs/htpasswd.html>`__
 

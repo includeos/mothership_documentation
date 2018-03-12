@@ -1,6 +1,6 @@
-.. _Developer-info:
+.. _For-developers:
 
-Developer info
+For developers
 ==============
 
 Installation
