@@ -8,7 +8,7 @@ IncludeOS Mothership
    :caption: Contents:
 
    Quick-start
-   Getting-started
+   Mothership-server
    Your-first-instance
    Update-your-instance
    Hypervisors

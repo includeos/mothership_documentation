@@ -1,7 +1,7 @@
-.. _Getting started:
+.. _Mothership-server:
 
-Getting started
-===============
+Mothership server
+=================
 
 Configuration
 -------------
