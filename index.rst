@@ -9,9 +9,9 @@ IncludeOS Mothership
 
    Quick-start
    Mothership-server
+   Mothership-cli
    Your-first-instance
    Update-your-instance
-   Hypervisors
    Developer-info
    Release-notes
 
