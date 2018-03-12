@@ -1,6 +1,6 @@
-.. _Mothership-cli:
+.. _Mothership-CLI:
 
-Mothership cli
+Mothership CLI
 ==============
 
 .. _hypervisors:
@@ -44,7 +44,7 @@ Mothership needs the following parameters set for launch
 --vcloud-vapp     Name of vapp to generate (overwrites existing vapps with same name)
 
 
-Launch Command
+Launch command
 """""""""""""""""""""
 
 The final launch command will look like this:

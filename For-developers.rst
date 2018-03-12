@@ -1,6 +1,6 @@
-.. _Developer-info:
+.. _For-developers:
 
-Developer info
+For developers
 ==============
 
 Installation
@@ -23,7 +23,7 @@ The Mothership GUI client
 -------------------------
 ::
 
-    $ git clone git@github.com:includeos/mothership_client.git // f.ex. in your HOME directory
+    $ git clone git@github.com:includeos/mothership_client.git # f.ex. in your HOME directory
 
 MacOS::
 
@@ -36,7 +36,7 @@ MacOS::
 Ubuntu::
 
     $ sudo apt install npm
-    $ sudo npm install -g n // webpack needs the node command as opposed to nodejs. The npm n tool should fix that.
+    $ sudo npm install -g n # webpack needs the node command as opposed to nodejs. The npm n tool should fix that.
     $ sudo n stable
     $ sudo npm install -g webpack@2.6.1
     $ sudo npm install

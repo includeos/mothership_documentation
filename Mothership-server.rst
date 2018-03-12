@@ -15,7 +15,7 @@ or more users within the config_files directory:
 
 ::
 
-    $ htpasswd -c -B config_files/.htpasswd myuser // create a .htpasswd file and add the user myuser
+    $ htpasswd -c -B config_files/.htpasswd myuser # create a .htpasswd file and add the user myuser
 
 You will then be prompted to enter a password. Do this.
 
@@ -40,8 +40,11 @@ your mothership directory:
 
 
 
-Start your Mothership
----------------------
+Start Mothership
+----------------
+
+Locally
+~~~~~~~
 
 ::
 
@@ -85,8 +88,8 @@ so that a Login-button will not be displayed when you visit the Mothership websi
     $ <set the constant enableLogin to false>
     $ ./copyfiles.sh
 
-Start your Mothership in a Docker container
--------------------------------------------
+In a Docker container
+~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
@@ -97,7 +100,7 @@ do the following:
 
 ::
 
-    $ ./build_mothership.sh // instead of `go build mothership.go`
+    $ ./build_mothership.sh # instead of `go build mothership.go`
     $ docker run --name mothership --publish 9090:9090 --publish 8080:8080 \
     -v $PWD/config_files:/home/ubuntu/mothership/config_files \
     -v mothership_storage:/home/ubuntu/mothership/runtime_files \
@@ -127,7 +130,7 @@ Stop your Mothership container:
 
 ::
 
-    $ docker stop mothership // `docker kill mothership` is also an option if this doesn't work
+    $ docker stop mothership # `docker kill mothership` is also an option if this doesn't work
 
 List your running Docker containers:
 
@@ -148,10 +151,29 @@ Clean up your Docker environment:
     $ docker system prune
     $ <answer y when asked if you want to continue>
 
-.. _the-website:
+Server options
+~~~~~~~~~~~~~~
+
+To provide options to mothership there are two possibilities:
+
+1. Launch parameters to ``mothership serve``. Options use the ``--<option>`` format.
+2. Options in config file: ``config_files/config.yaml`` supplied in a ``key: value``.
+
+Notable options are::
+
+      --builder string               builder type: native or docker (default "native")
+      --certfile string              Certificate file for TLS
+      --clean                        <bool, optional> clean everything
+      --keyfile string               Private key file for TLS
+      --serverauth string            server auth method (default "none")
+      --serverport string            port number (default "8080")
+      --verboselogging               <bool, optional> verbose logging
+
+Access Mothership
+-----------------
 
 cURL
-----
+~~~~
 
 To perform authenticated requests with TLS using curl (which is default when starting Mothership), add the :code:`-u` flag to your curl commands:
 
@@ -160,7 +182,7 @@ To perform authenticated requests with TLS using curl (which is default when sta
     $ curl -u <username>:<password> https://localhost:8080/images -k
 
 CLI
----
+~~~
 
 To enable the CLI commands to send your credentials when making requests, you can either add the :code:`--username` and :code:`--password` flags to your CLI commands,
 or perform :code:`./mothership init` to have the client prompt you for your credentials and store them in a config file for future CLI commands.
@@ -169,9 +191,10 @@ or perform :code:`./mothership init` to have the client prompt you for your cred
 
     $ ./mothership images --username <username> --password <password>
 
+.. _the-website:
 
-The website
------------
+Website
+~~~~~~~
 
 When you have come this far, or if you want to connect to a public Mothership that is already running, you can open
 your browser and go to the Mothership's website.
@@ -194,21 +217,3 @@ This username and password must match one of the entries in the previously creat
 If no authentication is required, you will be sent straight to the Instances page:
 
 .. image:: _static/images/instances-start.png
-
-Mothership server options
--------------------------
-
-To provide options to mothership there are two possibilities:
-
-1. Launch parameters to ``mothership serve``. Options use the ``--<option>`` format.
-2. Options in config file: ``config_files/config.yaml`` supplied in a ``key: value``.
-
-Notable options are::
-
-      --builder string               builder type: native or docker (default "native")
-      --certfile string              Certificate file for TLS
-      --clean                        <bool, optional> clean everything
-      --keyfile string               Private key file for TLS
-      --serverauth string            server auth method (default "none")
-      --serverport string            port number (default "8080")
-      --verboselogging               <bool, optional> verbose logging

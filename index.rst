@@ -9,9 +9,9 @@ IncludeOS Mothership
 
    Quick-start
    Mothership-server
-   Mothership-cli
    Using-mothership
-   Developer-info
+   Mothership-CLI
+   For-developers
    Release-notes
 
 ..
