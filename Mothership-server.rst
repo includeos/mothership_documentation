@@ -15,7 +15,7 @@ or more users within the config_files directory:
 
 ::
 
-    $ htpasswd -c -B config_files/.htpasswd myuser // create a .htpasswd file and add the user myuser
+    $ htpasswd -c -B config_files/.htpasswd myuser # create a .htpasswd file and add the user myuser
 
 You will then be prompted to enter a password. Do this.
 
@@ -100,7 +100,7 @@ do the following:
 
 ::
 
-    $ ./build_mothership.sh // instead of `go build mothership.go`
+    $ ./build_mothership.sh # instead of `go build mothership.go`
     $ docker run --name mothership --publish 9090:9090 --publish 8080:8080 \
     -v $PWD/config_files:/home/ubuntu/mothership/config_files \
     -v mothership_storage:/home/ubuntu/mothership/runtime_files \
@@ -130,7 +130,7 @@ Stop your Mothership container:
 
 ::
 
-    $ docker stop mothership // `docker kill mothership` is also an option if this doesn't work
+    $ docker stop mothership # `docker kill mothership` is also an option if this doesn't work
 
 List your running Docker containers:
 

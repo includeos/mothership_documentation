@@ -10,7 +10,7 @@ Hosted by `Read the Docs <https://docs.readthedocs.io/en/latest/>`__
 	$ pip install sphinx sphinx-autobuild sphinx_rtd_theme
 	$ <make your changes>
 	$ make html
-	$ open _build/html/<Your-updated-file>.html // to test your changes
+	$ open _build/html/<Your-updated-file>.html # to test your changes
 	$ <commit your changes>
 
 After you have created a pull request and your changes have been merged, `includeos-mothership.readthedocs.io <https://includeos-mothership.readthedocs.io>`__ will get updated automatically.

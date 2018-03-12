@@ -118,8 +118,8 @@ forwarding you have to run the following commands (on macOS):
 
     $ echo "nat on en0 from bridge43:network to any -> (en0)" > includeos-nat.conf
     $ sudo sysctl -w net.inet.ip.forwarding=1
-    $ sudo pfctl -F all // flush all active rules
-    $ sudo pfctl -f includeos-nat.conf -e // enable pf
+    $ sudo pfctl -F all # flush all active rules
+    $ sudo pfctl -f includeos-nat.conf -e # enable pf
 
 An alternative to turning on IP forwarding in this case however (with a Mothership running on localhost), is to
 create an uplink with URL 10.0.0.1:9090 and build an image with that. Then you only need to run
