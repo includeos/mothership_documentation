@@ -232,3 +232,21 @@ This username and password must match one of the entries in the previously creat
 If no authentication is required, you will be sent straight to the Instances page:
 
 .. image:: _static/images/instances-start.png
+
+Mothership server options
+-------------------------
+
+To provide options to mothership there are two possibilities:
+
+1. Launch parameters to ``mothership serve``. Options use the ``--<option>`` format.
+2. Options in config file: ``config_files/config.yaml`` supplied in a ``key: value``.
+
+Notable options are::
+
+      --builder string               builder type: native or docker (default "native")
+      --certfile string              Certificate file for TLS
+      --clean                        <bool, optional> clean everything
+      --keyfile string               Private key file for TLS
+      --serverauth string            server auth method (default "none")
+      --serverport string            port number (default "8080")
+      --verboselogging               <bool, optional> verbose logging
