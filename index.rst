@@ -12,7 +12,7 @@ IncludeOS Mothership
    Your-first-instance
    Update-your-instance
    Hypervisors
-   Tests
+   Developer-info
    Release-notes
 
 ..
