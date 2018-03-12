@@ -62,10 +62,10 @@ There are three ways to interact with the Mothership server.
 
 Web GUI
     This GUI is available at: `https://localhost:8080 <https://localhost:8080>`__, for more information on this please see: :ref:`Mothership GUI<the-website>`
-Command-line interface
-    The binary ``mothership-linux-amd64`` used to launch the server also works as a CLI
 API
     For more information on the various API endpoints, see the API documentation at `https://localhost:8080/apidocs/apidocs.html <https://localhost:8080/apidocs/apidocs.html>`__
+Command-line interface
+    The binary ``mothership-linux-amd64`` used to launch the server also works as a CLI
 
 Using the CLI the following command will give you information about the running instances::
 
