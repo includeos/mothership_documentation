@@ -11,6 +11,7 @@ Dependencies
 1. Clone Git repository
 -----------------------
 ::
+
     $ git clone git@github.com:includeos/mothership-beta.git
 
 2. Create user
