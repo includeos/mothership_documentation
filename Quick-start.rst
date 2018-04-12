@@ -8,7 +8,12 @@ Dependencies
 - `Docker <https://docs.docker.com/install/>`__
 - `htpasswd <https://httpd.apache.org/docs/2.4/programs/htpasswd.html>`__
 
-1. Create user
+1. Clone Git repository
+-----------------------
+::
+    $ git clone git@github.com:includeos/mothership-beta.git
+
+2. Create user
 --------------
 Mothership comes with basic authentication enabled by default. It is therefore necessary to create a user:
 ::
@@ -16,7 +21,7 @@ Mothership comes with basic authentication enabled by default. It is therefore n
     $ touch config_files/.htpasswd               # Create empty .htpasswd file
     $ htpasswd -B config_files/.htpasswd myuser  # Add the user myuser
 
-2. Configure TLS
+3. Configure TLS
 ----------------
 TLS is also enabled by default. Mothership expects two files to be present in the folder ``config_files``:
 
@@ -25,7 +30,7 @@ TLS is also enabled by default. Mothership expects two files to be present in th
 
 For instructions on how to generate a self-signed certificate for testing see: :ref:`self-signed-tls`
 
-3. Build and launch Mothership
+4. Build and launch Mothership
 ------------------------------
 First build then then run mothership using docker::
 
@@ -56,7 +61,7 @@ This will launch the mothership server. Make sure there are no errors in the lau
     time="xx" level=info msg="1 registered users"
     ⇨ https server started on [::]:8080
 
-4. Access Mothership
+5. Access Mothership
 --------------------
 There are three ways to interact with the Mothership server.
 
