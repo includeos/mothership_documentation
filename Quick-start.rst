@@ -35,6 +35,8 @@ TLS is also enabled by default. Mothership expects two files to be present in th
 
 For instructions on how to generate a self-signed certificate for testing see: :ref:`self-signed-tls`
 
+.. _build_launch_mothership:
+
 4. Build and launch Mothership
 ------------------------------
 First build then then run mothership using docker::
@@ -61,7 +63,7 @@ The options used are::
     Then the mothership options:
         mothership serve                    Start mothership server
 
-.. note:: If you are experiencing problems with permissions for the mounted resources you might need to launch the docker container with ``--privileged``. On systems like RedHat Enterprise Linux that use SELinux this might be necessary. 
+.. note:: If you are experiencing problems with permissions for the mounted resources you might need to launch the docker container with ``--privileged``. On systems like RedHat Enterprise Linux that use SELinux this might be necessary.
 
 This will launch the mothership server. Make sure there are no errors in the launch output and the two following lines indicates that basic auth and TLS are properly configured::
 
