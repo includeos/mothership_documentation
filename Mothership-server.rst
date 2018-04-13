@@ -78,8 +78,7 @@ following command:
 
     $ ./mothership serve --noservertls --serverauth none
 
-**Note**: If you want to disable authentication and TLS, you also need to update a constant in the mothership_client
-so that a Login-button will not be displayed when you visit the Mothership website:
+.. note:: If you want to disable authentication and TLS, you also need to update a constant in the mothership_client so that a Login-button will not be displayed when you visit the Mothership website:
 
 ::
 
