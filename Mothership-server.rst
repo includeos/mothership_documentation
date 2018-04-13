@@ -38,6 +38,8 @@ your mothership directory:
 
     $ openssl req -x509 -newkey rsa:4096 -keyout config_files/key.pem -out config_files/cert.pem -days 365 -nodes
 
+.. important:: This should only be used for testing, and it will require you to confirm the certificate manually in the web browser.
+
 
 
 Start Mothership
