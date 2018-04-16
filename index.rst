@@ -8,6 +8,7 @@ IncludeOS Mothership
    :caption: Contents:
 
    Quick-start
+   Upgrading
    Mothership-server
    Using-mothership
    Mothership-CLI
