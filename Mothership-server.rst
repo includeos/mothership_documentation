@@ -82,12 +82,12 @@ following command:
 
 .. note:: If you want to disable authentication and TLS, you also need to update a constant in the mothership_client so that a Login-button will not be displayed when you visit the Mothership website:
 
-::
+    ::
 
-    $ cd mothership_client
-    $ <open the file components/common.js>
-    $ <set the constant enableLogin to false>
-    $ ./copyfiles.sh
+        $ cd mothership_client
+        $ <open the file components/common.js>
+        $ <set the constant enableLogin to false>
+        $ ./copyfiles.sh
 
 In a Docker container
 ~~~~~~~~~~~~~~~~~~~~~

@@ -37,12 +37,15 @@ Mothership needs the following parameters set for launch
 
     $ mothership launch --hypervisor vcloud
 
-
---vcloud-net      Name of the network in vcloud to connect to
---vcloud-address  Address to vcloud
---vcloud-org      Name of vcloud organization
---vcloud-vapp     Name of vapp to generate (overwrites existing vapps with same name)
-
++--------------------------+---------------------------------------------------------------------+
+| :code:`--vcloud-net`     | Name of the network in vcloud to connect to                         |
++--------------------------+---------------------------------------------------------------------+
+| :code:`--vcloud-address` | Address to vcloud                                                   |
++--------------------------+---------------------------------------------------------------------+
+| :code:`--vcloud-org`     | Name of vcloud organization                                         |
++--------------------------+---------------------------------------------------------------------+
+| :code:`--vcloud-vapp`    | Name of vapp to generate (overwrites existing vapps with same name) |
++--------------------------+---------------------------------------------------------------------+
 
 Launch command
 """""""""""""""""""""

@@ -5,15 +5,20 @@ IncludeOS Mothership
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Mothership documentation
 
    Quick-start
    Upgrading
    Mothership-server
    Using-mothership
    Mothership-CLI
-   For-developers
    Release-notes
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Developer documentation
+
+   For-developers
 
 ..
     Indices and tables
