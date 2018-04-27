@@ -42,41 +42,73 @@ Ubuntu::
     $ sudo npm install
     $ ./copyfiles.sh
 
+Makefile
+--------
+
+The easiest way to build and test Mothership is by using the Makefile. This builds mothership using docker. The available options are::
+
+    make help
+    usage: make [target]
+
+    Tests:
+    tests             Run all the tests
+    unit-tests        Run only the unit tests in docker
+    integration-tests Run only the integration tests in docker
+
+    Tools:
+    gofmt            Run the gofmt check on the codebase, exits with 0 if OK
+    errcheck         Run the errcheck tool, outputs how many errors are not checked
+    whitespace       Run a whitespace check of the repo
+
+    Miscellaneous:
+    help             Show this help.
+    release          Create a full release, set desired tag with -e TAG=<Desired-tag>
+    clean            Delete all release folders in release/v*
+    run              run mothership in docker
+
+    Building:
+    build            Build mothership binary in docker (mothership-linux-amd64)
+    client           Build client binary in docker
+    mothership       Build mothership in a docker container. Creates docker container named mothership
+
+Creating a release
+++++++++++++++++++
+
+To create a release simply run :code:`make release -e TAG=<desired tag>`. The release files will be available in the directory :code:`./release/<desired tag>`. The files will then need to be moved to the desired release location.
+
+The only difference between the files created by :code:`make release` and :code:`make mothership` is that the release creates a mac binary in addition to the linux binary.
+
 Tests
 -----
 
-**Note**: If the tests are run with authentication (as they are by default), you need to add a user to the
-mothership/config_files/.htpasswd file with the username `test` and the password `testtesttest` for the tests to pass.
+.. note:: If you want to run the tests locally then you need to create a docker volume with the htpasswd and certificate config files. To create this volume run the command:
 
-To append the test user to an existing .htpasswd file::
+    .. code-block:: bash
 
-    $ cd $GOPATH/src/github.com/includeos/mothership
-    $ htpasswd -B config_files/.htpasswd test
-    $ <enter password `testtesttest` when prompted to set a password for the user>
-
-To create the .htpasswd file and add a user with the username `test` to it::
-
-    $ htpasswd -c -B config_files/.htpasswd test
-    $ <enter password `testtesttest` when prompted to set a password for the user>
+        docker run --rm \
+          -v $PWD/test/test_config_files:/source \
+          -v mship_test_config_files:/dest \
+          ubuntu:xenial cp -r /source/. /dest
 
 Run the tests locally
-~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++
 
 (Remember to clean your Mothership environment first by running :code:`./mothership serve --clean`)
 
-::
+.. code-block:: bash
 
     $ go test ./... -tags=all -p=1
+
 
 The -tags option can be blank, :code:`all` or :code:`integration`, based on which tests you want to run.
 
 Run the tests with Docker
-~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++
 
-::
+Run the tests using the Makefile:
 
-    $ ./build_mothership.sh -a
+.. code-block:: bash
 
-To get verbose output::
-
-    $ ./build_mothership.sh -av
+    $ make tests             # Run all tests
+    $ make unit-tests        # Run only unit tests
+    $ make integration-tests # Run only integration tests
