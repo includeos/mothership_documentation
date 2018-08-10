@@ -16,8 +16,7 @@ Installation
     $ cd $GOPATH
     $ mkdir -p src/github.com/includeos && cd src/github.com/includeos
     $ git clone git@github.com:includeos/mothership.git
-    $ dep ensure
-    $ go build mothership.go
+    $ make mothership-local # or ``make mothership`` if you want to start your Mothership in a Docker container
 
 The Mothership GUI client
 -------------------------

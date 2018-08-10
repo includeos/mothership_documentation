@@ -10,6 +10,7 @@ IncludeOS Mothership
    Quick-start
    Upgrading
    Mothership-server
+   Accessing-mothership
    Using-mothership
    Mothership-CLI
    Release-notes
@@ -19,6 +20,7 @@ IncludeOS Mothership
    :caption: Developer documentation
 
    For-developers
+   Mothership-server-for-developers
 
 ..
     Indices and tables
