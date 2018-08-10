@@ -13,7 +13,7 @@ v0.14 August x 2018
     All information stored in your Mothership today must be **DELETED** before starting this Mothership version for the first time.
     If you need anything that is stored in your Mothership, take a backup of the ``runtime_files`` folder **BEFORE** starting the Mothership.
 
-    When starting this Mothership version for the first time, add the **``--clean``** flag to the ``mothership serve`` command.
+    When starting this Mothership version for the first time, add the ``--clean`` flag to the ``mothership serve`` command.
     This will delete all folders in the Mothership's ``runtime_files`` folder, which includes NaCls, images, instances data and more.
 
 .. warning::
@@ -29,7 +29,9 @@ v0.14 August x 2018
     TLS on uplink (default). And an instance running an image where the uplink URL starts with ``https://`` will not be able to connect to a Mothership
     that has been started with the ``--nouplinktls`` flag set.
 
-- UUID is replacing MAC as instance ID
+- New instance ID
+
+    UUID is replacing MAC as instance ID
 
 - Persistent information about instances
 
@@ -41,12 +43,17 @@ v0.14 August x 2018
 
     On the Instances page you can select multiple (or all) instances and delete them. When deleting an instance, all information stored about the instance will also be deleted.
 
-- On the Instances page you get an overview of how many instances have been connected to the Mothership in total, how many are connected now,
-how many have disconnected and how many we don't know the status of (``unknown``).
+- Overview of number of instances connected, disconnected, unknown and total
 
-- Filter instances by status in the GUI: Connected, Disconnected, Unknown, Panicked
+    On the Instances page you get an overview of how many instances have been connected to the Mothership in total, how many are connected now, how many have disconnected and how many we don't know the status of (``unknown``)
 
-- A warning icon will be displayed in front of an instance's alias on the Instances page if a panic has occurred. Go to the instance's management page and click on the Panics tab to get more information about the panic(s).
+- Filter instances by status
+
+    In the GUI you can now filter instances by: Connected, Disconnected, Unknown, Panicked
+
+- Warning icon if an instance has panicked
+
+    A warning icon will be displayed in front of an instance's alias on the Instances page if a panic has occurred. Go to the instance's management page and click on the Panics tab to get more information about the panic(s).
 
 - Management of an instance
 
@@ -55,8 +62,11 @@ how many have disconnected and how many we don't know the status of (``unknown``
 
     In the "Update instance"-panel you can either deploy a previously built image to the instance, or you can "Save, build & deploy" a new one.
     "Save, build & deploy" means:
+
     1) Save the NaCl changes if any changes have been done (you can edit the NaCl the instance is already running, load another already existing NaCl or create a new NaCl - that's up to you).
+
     2) Build the image with the specified IncludeOS version, the specified image tag, the NaCl that is shown in the editor and the uplink information that the instance is reporting to the Mothership.
+
     3) Deploy the built image to the instance.
 
     If you try to deploy an image with an uplink URL that doesn't match the one that the instance is reporting, you will get a warning. Then you can choose if you want to deploy the image anyway or not.
@@ -86,9 +96,10 @@ how many have disconnected and how many we don't know the status of (``unknown``
 - NaCl Timer
 
     In every NaCl you can now (with IncludeOS version v0.12.0-645-g51f6fb3) create one or more Timer objects that tell the instance running the NaCl to print different information at specific intervals.
-    Have a look at the NaCl Timer documentation `here <https://includeos.readthedocs.io/en/latest/NaCl.html#timer>`__
+    Have a look at the NaCl Timer documentation `here <https://includeos.readthedocs.io/en/latest/NaCl.html#timer>`__.
 
 - When searching through images, also search through the image's uplink information
+
 
 v0.13 April 16 2018
 -------------------
