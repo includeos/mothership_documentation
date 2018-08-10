@@ -65,9 +65,11 @@ The options used are::
 
 .. note:: If you are experiencing problems with permissions for the mounted resources you might need to launch the docker container with ``--privileged``. On systems like RedHat Enterprise Linux that use SELinux this might be necessary.
 
-This will launch the mothership server. Make sure there are no errors in the launch output and the two following lines indicates that basic auth and TLS are properly configured::
+This will launch the mothership server. Make sure there are no errors in the launch output and the following lines indicate that basic auth and TLS are properly configured::
 
-    time="xx" level=info msg="1 registered users"
+    INFO[0014] 1 registered user
+    INFO[0014] Setting up hangar (uplink) with TLS on :9090
+    INFO[0014] Setting up server with TLS on :8080
     ⇨ https server started on [::]:8080
 
 5. Access Mothership
@@ -83,6 +85,6 @@ Command-line interface
 
 Using the CLI the following command will give you information about the running instances::
 
-    $ ./mothership-linux-amd64 --username myuser --password <password> instances
+    $ ./mothership-linux-amd64 --username <username> --password <password> instances
     Instances:
-    Instance ID  Service Name  Version  Arch  Online
+    Alias  Status  ID  Image Tag  Launched
