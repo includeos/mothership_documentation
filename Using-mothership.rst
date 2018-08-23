@@ -46,7 +46,7 @@ The newly created NaCl file is displayed in the list if the NaCl content doesn't
 If you are running Mothership with the native builder, you need to have IncludeOS installed on your machine. The
 IncludeOS documentation can be found `here <https://includeos.readthedocs.io>`__.
 
-**Go to the Build page**
+**Go to the Images page**
 
 Here you will see that your newly created NaCl is displayed in the drop-down list:
 
@@ -129,3 +129,27 @@ You only need to add the :code:`--create-bridge` option once.
 
 Update your IncludeOS instance
 ------------------------------
+
+If you want to update your instance on Mothership, click on the **Manage** button.
+They you will see an overview of the instance with several tabs with more information.
+Below the overview section, you will see two more sections:
+
+  1. Running on instance
+  2. Update instance
+
+The running on instance section will give you an overview of the image used, uplink, IncludeOS version and NaCl information if present.
+
+.. image:: _static/images/instances-manage.png
+
+**Click on Update instance**
+
+By clicking on update instance, you will be able to choose how you want to update.
+
+  1. Build and deploy a new image
+
+  This section allows you to choose the IncludeOS version, a name for your new image and choose a NaCl of your choice.
+
+2. The deploy a previously build image allows you to select a previously build image.
+By clicking on the drop down button, one can select from a list of all previously build images saved on mothership.
+
+.. image:: _static/images/instances-update.png
