@@ -43,9 +43,6 @@ The newly created NaCl file is displayed in the list if the NaCl content doesn't
 2. Build your image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you are running Mothership with the native builder, you need to have IncludeOS installed on your machine. The
-IncludeOS documentation can be found `here <https://includeos.readthedocs.io>`__.
-
 **Go to the Images page**
 
 Here you will see that your newly created NaCl is displayed in the drop-down list:
