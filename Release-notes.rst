@@ -86,12 +86,21 @@ v0.14 August x 2018
     When building, you can now set a custom image name and this will then be used as the image tag.
     This means that when an instance is running this specific image, the instance will report the tag you have given it to Mothership.
 
+    .. image:: _static/images/release-notes-v0.14/custom-image-tag.png
+
 - NaCl code snippets
 
     You can now create your own custom NaCl code snippets when you are creating or editing a NaCl.
     Write the NaCl snippet you want into the editor and click on the "Save as snippet"-button.
 
     .. image:: _static/images/release-notes-v0.14/snippets.png
+
+    You can also view the details of NACL snippets on the NACL page by clicking the arrow button.
+
+    .. image:: _static/images/release-notes-v0.14/view-nacl-snippets.png
+
+    The same is available on the update instance section of each instance.
+
 
 - NaCl Timer
 
