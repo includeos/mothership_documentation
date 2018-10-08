@@ -65,8 +65,12 @@ of these.
 
 **Click on the Build button**
 
-The status of the build is displayed on the right-hand side, and if everything went well you will be sent back to the Images page
-and a confirmation box will appear saying that the image was successfully created. You will see your newly created image on the page.
+The status of the build is displayed on the right-hand side.
+
+.. image:: _static/images/build-finished.png
+
+If everything went well you will be sent back to the Images page and a confirmation box will appear saying that the image was successfully created.
+You will see your newly created image on the page.
 
 .. image:: _static/images/images-with-content.png
 
