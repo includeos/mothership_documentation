@@ -18,7 +18,7 @@ v0.14 September x 2018
 
 .. warning::
 
-    This Mothership release contains **BREAKING CHANGES** and will only work with IncludeOS version v0.12.0-645-g51f6fb3.
+    This Mothership release contains **BREAKING CHANGES** and will only work with IncludeOS version v0.12.0-645-g51f6fb3 or newer.
     If you need to build with a previous IncludeOS version, you need to checkout the previous release of Mothership.
     All running instances **MUST** be rebuilt and relaunched to be able to receive updates from this Mothership.
 
@@ -94,13 +94,6 @@ v0.14 September x 2018
     Write the NaCl snippet you want into the editor and click on the "Save as snippet"-button.
 
     .. image:: _static/images/release-notes-v0.14/snippets.png
-
-    You can also view the details of NACL snippets on the NACL page by clicking the arrow button.
-
-    .. image:: _static/images/release-notes-v0.14/view-nacl-snippets.png
-
-    The same is available on the update instance section of each instance.
-
 
 - NaCl Timer
 
