@@ -45,6 +45,8 @@ The newly created NaCl file is displayed in the list if the NaCl content doesn't
 
 **Go to the Images page**
 
+Click on the Create new-button.
+
 Here you will see that your newly created NaCl is displayed in the drop-down list:
 
 .. image:: _static/images/build.png
@@ -56,29 +58,23 @@ create other uplinks.
 
 .. image:: _static/images/settings-uplinks-default.png
 
-On the Build page you are asked if you want to use a custom uplink for this build. If the default uplink on the
+On the Create new image-page you are asked if you want to use a custom uplink for this build. If the default uplink on the
 Settings page is the uplink you want to use, you don't need to check this. If you have another uplink you would like to
 use, however, check the box and a drop-down list containing the names of all your uplinks will be displayed. Choose one
 of these.
 
 **Click on the Build button**
 
-The status of the build is displayed on the right-hand side, and if everything went well, the status :code:`deployable`
-will be seen at the bottom.
-
-.. image:: _static/images/build-finished.png
-
-**Download the image**
-
-You can also see that the image's checksum is displayed on the Build page after a successful build, and if you click
-on this you will download the image.
-
-For more information about the image you have built, go to the Images page. All your built images will be displayed
-here and you can also upload images that you have built without using Mothership.
+The status of the build is displayed on the right-hand side, and if everything went well you will be sent back to the Images page
+and a confirmation box will appear saying that the image was successfully created. You will see your newly created image on the page.
 
 .. image:: _static/images/images-with-content.png
 
-Click on an image's More-button for more information about the image:
+**Download the image**
+
+Download the image by clicking on the image name.
+
+You can click on the arrow to the left of each image for more information about it:
 
 .. image:: _static/images/images-more.png
 
@@ -98,7 +94,7 @@ After you have downloaded the image, you can launch it on your preferred hypervi
 
 .. image:: _static/images/boot-first-instance.png
 
-On the Instances page, you will see your instance when it has connected to the Mothership successfully:
+On the Instances page, you will see your instance when it has successfully connected to the Mothership:
 
 .. image:: _static/images/instances-with-content.png
 
@@ -128,25 +124,24 @@ Update your IncludeOS instance
 ------------------------------
 
 If you want to update your instance on Mothership, click on the **Manage** button.
-They you will see an overview of the instance with several tabs with more information.
+There you will see an overview of the instance with several tabs with more information.
 Below the overview section, you will see two more sections:
 
   1. Running on instance
   2. Update instance
 
-The running on instance section will give you an overview of the image used, uplink, IncludeOS version and NaCl information if present.
+The Running on instance-section will give you an overview of the image running on the instance, with information about uplink, IncludeOS version and NaCl information if this is known to the Mothership.
 
 .. image:: _static/images/instances-manage.png
 
 **Click on Update instance**
 
-By clicking on update instance, you will be able to choose how you want to update.
+In the Update instance-panel, you will be able to choose how you want to update your instance.
 
-  1. Build and deploy a new image
+  1. Build & deploy a new image
 
-  This section allows you to choose the IncludeOS version, a name for your new image and choose a NaCl of your choice.
+  This section allows you to choose IncludeOS version, NaCl and add a name for your new image.
 
-2. The deploy a previously build image allows you to select a previously build image.
-By clicking on the drop down button, one can select from a list of all previously build images saved on mothership.
+  2. The Deploy a previously built image-section allows you to select a previously built image. Choose an image from the drop-down list and click the Deploy-button.
 
 .. image:: _static/images/instances-update.png
