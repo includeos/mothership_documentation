@@ -18,7 +18,7 @@ v0.14 September x 2018
 
 .. warning::
 
-    This Mothership release contains **BREAKING CHANGES** and will only work with IncludeOS version v0.12.0-645-g51f6fb3.
+    This Mothership release contains **BREAKING CHANGES** and will only work with IncludeOS version v0.12.0-645-g51f6fb3 or newer.
     If you need to build with a previous IncludeOS version, you need to checkout the previous release of Mothership.
     All running instances **MUST** be rebuilt and relaunched to be able to receive updates from this Mothership.
 
