@@ -6,14 +6,14 @@ Release notes
 .. todo Replace x with correct date
 
 v0.14 September x 2018
---------------------
+----------------------
 
 .. warning::
 
     All information stored in your Mothership today must be **DELETED** before starting this Mothership version for the first time.
     If you need anything that is stored in your Mothership, take a backup of the ``runtime_files`` folder **BEFORE** starting the Mothership.
 
-    When starting this Mothership version for the first time, add the ``--clean`` flag to the ``mothership serve`` command.
+    When starting this Mothership version for the **first time**, add the ``--clean`` flag to the ``mothership serve`` command.
     This will delete all folders in the Mothership's ``runtime_files`` folder, which includes NaCls, images, instances data and more.
 
 .. warning::
@@ -106,6 +106,10 @@ v0.14 September x 2018
 
     In every NaCl you can now (with IncludeOS version v0.12.0-645-g51f6fb3) create one or more Timer objects that tell the instance running the NaCl to print different information at specific intervals.
     Have a look at the NaCl Timer documentation `here <https://includeos.readthedocs.io/en/latest/NaCl.html#timer>`__.
+
+- NaCl Iface
+
+    The members buffer_limit and send_queue_limit have been added, and the Vlan type has been removed and incorporated into Iface. See the updated Iface documentation `here <https://includeos.readthedocs.io/en/latest/NaCl.html#iface>`__.
 
 - When searching through images, also search through the image's uplink information
 
