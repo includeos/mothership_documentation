@@ -13,7 +13,7 @@ v0.14 September x 2018
     All information stored in your Mothership today must be **DELETED** before starting this Mothership version for the first time.
     If you need anything that is stored in your Mothership, take a backup of the ``runtime_files`` folder **BEFORE** starting the Mothership.
 
-    When starting this Mothership version for the **first time**, add the ``--clean`` flag to the ``mothership serve`` command.
+    When starting this Mothership version for the **FIRST TIME**, add the ``--clean`` flag to the ``mothership serve`` command.
     This will delete all folders in the Mothership's ``runtime_files`` folder, which includes NaCls, images, instances data and more.
 
 .. warning::
