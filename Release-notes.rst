@@ -95,13 +95,6 @@ v0.14 September x 2018
 
     .. image:: _static/images/release-notes-v0.14/snippets.png
 
-    You can also view the details of NACL snippets on the NACL page by clicking the arrow button.
-
-    .. image:: _static/images/release-notes-v0.14/view-nacl-snippets.png
-
-    The same is available on the update instance section of each instance.
-
-
 - NaCl Timer
 
     In every NaCl you can now (with IncludeOS version v0.12.0-645-g51f6fb3) create one or more Timer objects that tell the instance running the NaCl to print different information at specific intervals.
