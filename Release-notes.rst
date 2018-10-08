@@ -9,15 +9,16 @@ v0.14 September x 2018
 ----------------------
 
 .. warning::
-
-    All information stored in your Mothership today must be **DELETED** before starting this Mothership version for the first time.
-    If you need anything that is stored in your Mothership, take a backup of the ``runtime_files`` folder **BEFORE** starting the Mothership. For more info about migrating to this new release see: :ref:`migrating_13_14`
+    It is recommended to **DELETE** all existing files before starting this Mothership version for the first time.
+    For more info about migrating to this new release see: :ref:`migrating_13_14`
 
 .. warning::
-
     This Mothership release contains **BREAKING CHANGES** and will only work with IncludeOS version v0.12.0-645-g51f6fb3 or newer.
     If you need to build with a previous IncludeOS version, you need to checkout the previous release of Mothership.
     All running instances **MUST** be rebuilt and relaunched to be able to receive updates from this Mothership.
+
+.. warning::
+    With the release of IncludeOS version v0.13.0-rc.1 a change to Liveupdate means that all existing Starbases **MUST** be changed. Any attempt to deploy a new image to an instance running an old IncludeOS version is not guaranteed to work correctly.
 
 - TLS on uplink
 
@@ -107,7 +108,7 @@ v0.14 September x 2018
 
 Migrating from old release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-Due to a lot of internal changes to how files are stored in this release of Mothership it is highly recommended to perform a deletion of all old files. This will affect:
+Due to internal changes to how files are stored in this release of Mothership it is highly recommended to perform a deletion of all old files. This will affect:
 
 - NaCls
 - Images
@@ -115,7 +116,7 @@ Due to a lot of internal changes to how files are stored in this release of Moth
 - Issues
 - Instance logs and history
 
-In order to prevent the loss of this information a backup must be made. To upgrade from a previous Mothership version to v0.14 we recommend the following procedure:
+If you need anything that is stored in your Mothership, take a backup of the ``runtime_files`` folder **BEFORE** starting the Mothership.  To upgrade from a previous Mothership version to v0.14 we recommend the following procedure:
 
 1. Perform a backup of all information that should be kept. Scripting this with the Mothership CLI is possible. Example shows how all the existing NaCls are pulled and stored: ::
 
