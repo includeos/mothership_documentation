@@ -11,10 +11,7 @@ v0.14 September x 2018
 .. warning::
 
     All information stored in your Mothership today must be **DELETED** before starting this Mothership version for the first time.
-    If you need anything that is stored in your Mothership, take a backup of the ``runtime_files`` folder **BEFORE** starting the Mothership.
-
-    When starting this Mothership version for the **FIRST TIME**, add the ``--clean`` flag to the ``mothership serve`` command.
-    This will delete all folders in the Mothership's ``runtime_files`` folder, which includes NaCls, images, instances data and more.
+    If you need anything that is stored in your Mothership, take a backup of the ``runtime_files`` folder **BEFORE** starting the Mothership. For more info about migrating to this new release see: :ref:`migrating_13_14`
 
 .. warning::
 
@@ -106,6 +103,26 @@ v0.14 September x 2018
 
 - When searching through images, also search through the image's uplink information
 
+.. _migrating_13_14:
+
+Migrating from old release
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Due to a lot of internal changes to how files are stored in this release of Mothership it is highly recommended to perform a deletion of all old files. This will affect:
+
+- NaCls
+- Images
+- Uplinks
+- Issues
+- Instance logs and history
+
+In order to prevent the loss of this information a backup must be made. To upgrade from a previous Mothership version to v0.14 we recommend the following procedure:
+
+1. Perform a backup of all information that should be kept. Scripting this with the Mothership CLI is possible. Example shows how all the existing NaCls are pulled and stored: ::
+
+    $ nacls=("$(<mothership-bin> nacls -o id)")
+    $ for i in ${nacls[@]}; do <mothership-bin> pull-nacl "$i"; done
+2. Launch Mothership with the ``--clean`` option, this will erase all persistent information.
+3. Upload any files from the backup that should be available on the new Mothership.
 
 v0.13 April 16 2018
 -------------------
