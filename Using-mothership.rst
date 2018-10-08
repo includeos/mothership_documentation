@@ -124,19 +124,19 @@ Update your IncludeOS instance
 ------------------------------
 
 If you want to update your instance on Mothership, click on the **Manage** button.
-They you will see an overview of the instance with several tabs with more information.
+There you will see an overview of the instance with several tabs with more information.
 Below the overview section, you will see two more sections:
 
   1. Running on instance
   2. Update instance
 
-The running on instance section will give you an overview of the image used, uplink, IncludeOS version and NaCl information if present.
+The Running on instance-section will give you an overview of the image running on the instance, with information about uplink, IncludeOS version and NaCl information if this is known to the Mothership.
 
 .. image:: _static/images/instances-manage.png
 
 **Click on Update instance**
 
-By clicking on update instance, you will be able to choose how you want to update your instance.
+In the Update instance-panel, you will be able to choose how you want to update your instance.
 
   1. Build & deploy a new image
 
