@@ -21,13 +21,7 @@ time you ran your Mothership, you can add the :code:`--clean` option:
 
     $ ./mothership serve --clean
 
-By default the Mothership is started with the docker builder, meaning that images are built using docker.
-
-If you want to build your images with your local IncludeOS installation, start the Mothership with the native builder:
-
-::
-
-    $ ./mothership serve --builder native
+Images are built using Docker.
 
 To exit the application, press :code:`Ctrl + c`
 
@@ -124,7 +118,6 @@ To provide options to mothership there are two possibilities:
 
 Notable options are::
 
-      --builder string               builder type: docker or native (default "docker")
       --certfile string              Certificate file for TLS
       --clean                        <bool, optional> clean everything
       --keyfile string               Private key file for TLS

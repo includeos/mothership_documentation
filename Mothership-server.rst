@@ -77,7 +77,6 @@ To provide options to mothership there are two possibilities:
 
 Notable options are::
 
-      --builder string               builder type: docker or native (default "docker")
       --certfile string              Certificate file for TLS
       --clean                        <bool, optional> clean everything
       --keyfile string               Private key file for TLS

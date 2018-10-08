@@ -5,7 +5,7 @@ Release notes
 
 .. todo Replace x with correct date
 
-v0.14 August x 2018
+v0.14 September x 2018
 --------------------
 
 .. warning::
