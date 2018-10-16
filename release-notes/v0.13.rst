@@ -1,0 +1,86 @@
+v0.13 April 16 2018
+-------------------
+
+.. note::
+
+    This release contains breaking changes, meaning an IncludeOS instance built with a previous version can not be updated to run an image built with this release's default IncludeOS version (Docker container v0.12.0-rc.4.1).
+
+    Any running instances need to be rebuilt with this release's IncludeOS version and rebooted before new images can be deployed to them.
+
+    Deploying an image to an instance with an incompatible IncludeOS version will result in an error.
+
+    .. image:: ../_static/images/release-notes-v0.13/settings-includeos.png
+
+- TCP load balancer
+
+NaCl example
+::
+
+    Iface uplink {
+        index: 0,
+        address: 10.0.0.42,
+        netmask: 255.255.255.0,
+        gateway: 10.0.0.1
+    }
+
+    Iface outside {
+        index: 1,
+        address: 10.0.0.43,
+        netmask: 255.255.255.0,
+        gateway: 10.0.0.1
+    }
+
+    Iface inside {
+        index: 2,
+        address: 10.0.0.44,
+        netmask: 255.255.255.0,
+        gateway: 10.0.0.1
+    }
+
+    Load_balancer lb {
+      layer: tcp,
+      clients: {
+            iface: outside,
+            port: 80,
+            wait_queue_limit: 1000,
+            session_limit: 1000
+        },
+        servers: {
+            iface: inside,
+            algorithm: round_robin,
+            pool: [
+                {
+                    address: 10.0.0.10,
+                    port: 80
+                },
+                {
+                    address: 10.0.0.11,
+                    port: 80
+                },
+                {
+                    address: 10.0.0.12,
+                    port: 80
+                }
+            ]
+        }
+    }
+
+For more information, visit the `NaCl documentation page <https://includeos.readthedocs.io/en/latest/NaCl.html#load-balancer>`__.
+
+- New Instances, NaCl and Images tables, with sort functionality
+
+.. image:: ../_static/images/release-notes-v0.13/nacl-table.png
+
+.. image:: ../_static/images/release-notes-v0.13/nacl-table-sorted.png
+
+.. image:: ../_static/images/release-notes-v0.13/images-table-5-rows.png
+
+.. image:: ../_static/images/release-notes-v0.13/images-table-5-rows-sorted.png
+
+.. image:: ../_static/images/release-notes-v0.13/images-table-5-rows-more.png
+
+- New Mothership log view on the Settings page
+
+.. image:: ../_static/images/release-notes-v0.13/settings-log.png
+
+- Internal stability improvements

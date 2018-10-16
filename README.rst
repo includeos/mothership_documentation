@@ -14,3 +14,8 @@ Hosted by `Read the Docs <https://docs.readthedocs.io/en/latest/>`__
 	$ <commit your changes>
 
 After you have created a pull request and your changes have been merged, `includeos-mothership.readthedocs.io <https://includeos-mothership.readthedocs.io>`__ will get updated automatically.
+
+RST documentation
+-----------------
+
+More documentation regarding reStructuredText: `Sphinx documentation <http://www.sphinx-doc.org/en/master/usage/restructuredtext/>`__.

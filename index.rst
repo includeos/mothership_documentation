@@ -1,7 +1,7 @@
 IncludeOS Mothership
 ====================
 
-**Mothership** is a management platform for IncludeOS applications.
+Mothership is a management platform for IncludeOS applications currently in closed beta. 
 
 .. toctree::
    :maxdepth: 2
@@ -13,7 +13,7 @@ IncludeOS Mothership
    Accessing-mothership
    Using-mothership
    Mothership-CLI
-   Release-notes
+   release-notes/Release-notes
 
 .. toctree::
    :maxdepth: 2
