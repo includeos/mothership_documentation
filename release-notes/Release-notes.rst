@@ -5,5 +5,6 @@ Release notes
 
 .. toctree::
    :glob:
+   :reversed:
 
    *
