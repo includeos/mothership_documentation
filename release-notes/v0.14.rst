@@ -1,8 +1,3 @@
-.. _Release notes:
-
-Release notes
-=============
-
 v0.14 October 8 2018
 ----------------------
 
@@ -70,7 +65,7 @@ v0.14 October 8 2018
     If you try to deploy an image with an uplink URL that doesn't match the one that the instance is reporting, you will get a warning. Then you can choose if you want to deploy the image anyway or not.
     You will also get a warning if the image you try to deploy has been uploaded to the Mothership so that the Mothership doesn't know what uplink URL the image has been built with.
 
-    .. image:: _static/images/release-notes-v0.14/update-instance.png
+    .. image:: ../_static/images/release-notes-v0.14/update-instance.png
 
 - Upgrade an instance (API endpoint)
 
@@ -84,14 +79,14 @@ v0.14 October 8 2018
     When building, you can now set a custom image name and this will then be used as the image tag.
     This means that when an instance is running this specific image, the instance will report the tag you have given it to Mothership.
 
-    .. image:: _static/images/release-notes-v0.14/custom-image-tag.png
+    .. image:: ../_static/images/release-notes-v0.14/custom-image-tag.png
 
 - NaCl code snippets
 
     You can now create your own custom NaCl code snippets when you are creating or editing a NaCl.
     Write the NaCl snippet you want into the editor and click on the "Save as snippet"-button.
 
-    .. image:: _static/images/release-notes-v0.14/snippets.png
+    .. image:: ../_static/images/release-notes-v0.14/snippets.png
 
 - NaCl Timer
 
@@ -124,136 +119,3 @@ If you need anything that is stored in your Mothership, take a backup of the ``r
     $ for i in ${nacls[@]}; do <mothership-bin> pull-nacl "$i"; done
 2. Launch Mothership with the ``--clean`` option, this will erase all persistent information.
 3. Upload any files from the backup that should be available on the new Mothership.
-
-v0.13 April 16 2018
--------------------
-
-.. note::
-
-    This release contains breaking changes, meaning an IncludeOS instance built with a previous version can not be updated to run an image built with this release's default IncludeOS version (Docker container v0.12.0-rc.4.1).
-
-    Any running instances need to be rebuilt with this release's IncludeOS version and rebooted before new images can be deployed to them.
-
-    Deploying an image to an instance with an incompatible IncludeOS version will result in an error.
-
-    .. image:: _static/images/release-notes-v0.13/settings-includeos.png
-
-- TCP load balancer
-
-NaCl example
-::
-
-    Iface uplink {
-        index: 0,
-        address: 10.0.0.42,
-        netmask: 255.255.255.0,
-        gateway: 10.0.0.1
-    }
-
-    Iface outside {
-        index: 1,
-        address: 10.0.0.43,
-        netmask: 255.255.255.0,
-        gateway: 10.0.0.1
-    }
-
-    Iface inside {
-        index: 2,
-        address: 10.0.0.44,
-        netmask: 255.255.255.0,
-        gateway: 10.0.0.1
-    }
-
-    Load_balancer lb {
-      layer: tcp,
-      clients: {
-            iface: outside,
-            port: 80,
-            wait_queue_limit: 1000,
-            session_limit: 1000
-        },
-        servers: {
-            iface: inside,
-            algorithm: round_robin,
-            pool: [
-                {
-                    address: 10.0.0.10,
-                    port: 80
-                },
-                {
-                    address: 10.0.0.11,
-                    port: 80
-                },
-                {
-                    address: 10.0.0.12,
-                    port: 80
-                }
-            ]
-        }
-    }
-
-For more information, visit the `NaCl documentation page <https://includeos.readthedocs.io/en/latest/NaCl.html#load-balancer>`__.
-
-- New Instances, NaCl and Images tables, with sort functionality
-
-.. image:: _static/images/release-notes-v0.13/nacl-table.png
-
-.. image:: _static/images/release-notes-v0.13/nacl-table-sorted.png
-
-.. image:: _static/images/release-notes-v0.13/images-table-5-rows.png
-
-.. image:: _static/images/release-notes-v0.13/images-table-5-rows-sorted.png
-
-.. image:: _static/images/release-notes-v0.13/images-table-5-rows-more.png
-
-- New Mothership log view on the Settings page
-
-.. image:: _static/images/release-notes-v0.13/settings-log.png
-
-- Internal stability improvements
-
-v0.12 March 12 2018
--------------------
-
-GUI
-~~~
-
-- Description field added per instance, which is persistent
-
-.. image:: _static/images/release-notes-v0.12/instance-description.png
-
-- Search functionality on the Instances, Images and NaCl pages
-
-    - Image search targets:
-        - Checksum (ID)
-        - Name
-        - OS version
-        - NaCl name
-    - Instance search targets:
-        - ID
-        - UUID
-        - Alias
-        - Description
-        - IP addresses
-        - Running image's checksum (ID)
-        - Devices
-    - NaCl search targets:
-        - ID
-        - Name
-        - Content
-
-.. image:: _static/images/release-notes-v0.12/search-images.png
-
-.. image:: _static/images/release-notes-v0.12/search-instances.png
-
-.. image:: _static/images/release-notes-v0.12/search-nacl.png
-
-- Pagination on the Instances, Images and NaCl pages (20 elements per page)
-
-.. image:: _static/images/release-notes-v0.12/pagination.png
-
-Internal improvements
-~~~~~~~~~~~~~~~~~~~~~
-
-- Authentication, TLS and docker builder are default when starting Mothership
-- Improved logging
