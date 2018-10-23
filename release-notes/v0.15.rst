@@ -1,0 +1,28 @@
+v0.15 October 26 2018
+----------------------
+
+.. todolist::
+
+* Set and get name of Mothership
+  It is now possible to give Mothership a name that shows up in the GUI: ::
+
+    $ mothership serve --name example
+
+  This name will then be available from the ``/info/name`` API endpoint. It shows up in the Mothership GUI as such:
+
+.. image:: ../_static/images/release-notes-v0.15/serve_name.png
+
+* InfluxDB
+
+.. todo::
+  Finish InfluxDB
+
+* Better file names when downloading images for hypervisor
+
+.. todo::
+  Finish file names
+
+* Internal improvements
+
+.. todo::
+  Finish internal improvements
