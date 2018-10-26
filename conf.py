@@ -163,7 +163,3 @@ texinfo_documents = [
      author, 'Mothership', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-# Add todos extension
-extensions.append('sphinx.ext.todo')
-todo_include_todos=True
