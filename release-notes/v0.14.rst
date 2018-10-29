@@ -65,7 +65,7 @@ v0.14 October 8 2018
     If you try to deploy an image with an uplink URL that doesn't match the one that the instance is reporting, you will get a warning. Then you can choose if you want to deploy the image anyway or not.
     You will also get a warning if the image you try to deploy has been uploaded to the Mothership so that the Mothership doesn't know what uplink URL the image has been built with.
 
-    .. image:: ../_static/images/release-notes-v0.14/update-instance.png
+.. image:: ../_static/images/release-notes-v0.14/update-instance.png
 
 - Upgrade an instance (API endpoint)
 
@@ -79,14 +79,14 @@ v0.14 October 8 2018
     When building, you can now set a custom image name and this will then be used as the image tag.
     This means that when an instance is running this specific image, the instance will report the tag you have given it to Mothership.
 
-    .. image:: ../_static/images/release-notes-v0.14/custom-image-tag.png
+.. image:: ../_static/images/release-notes-v0.14/custom-image-tag.png
 
 - NaCl code snippets
 
     You can now create your own custom NaCl code snippets when you are creating or editing a NaCl.
     Write the NaCl snippet you want into the editor and click on the "Save as snippet"-button.
 
-    .. image:: ../_static/images/release-notes-v0.14/snippets.png
+.. image:: ../_static/images/release-notes-v0.14/snippets.png
 
 - NaCl Timer
 
