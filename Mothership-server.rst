@@ -104,7 +104,7 @@ add :code:`serve` at the end, followed by the Mothership options you want to cha
 Bobs and Builders
 -----------------
 
-In order to build images with specific versions of IncludeOS there was a need to create a new system. In addition there needed to be a way to manage these different builders. Therefore the following terms have been introduced into Mothership:
+In order to build images with specific versions of IncludeOS there was a need to create a new system. In addition there needed to be a way to manage these different Builders. Therefore the following terms have been introduced into Mothership:
 
 .. glossary::
 
@@ -124,7 +124,7 @@ BobProvider
 Both Bobs and Builders have the following information:
 
     ID
-      ID of the Bob/Builder. Used in all API calls when it is required to specify a bob/builder.
+      ID of the Bob/Builder. Used in all API calls when it is required to specify a Bob/Builder.
     Name
       Name of the Bob/Builder.
     Version
@@ -148,11 +148,11 @@ In order to prepare a Builder the following tasks must be completed:
 
       /v1/bobproviders
 
-  #. Update one of the bobproviders, here ``DockerHub`` is chosen::
+  #. Update one of the Bobproviders, here ``DockerHub`` is chosen::
 
       /v1/bobproviders/DockerHub/update
 
-  #. Get list of available bobs from the ``DockerHub`` provider::
+  #. Get list of available Bobs from the ``DockerHub`` provider::
 
       /v1/bobproviders/DockerHub/bobs
 
@@ -162,7 +162,7 @@ In order to prepare a Builder the following tasks must be completed:
 
   #. Check list of Builders::
 
-      /v1/Builders
+      /v1/builders
 
 
 Example 2: Building and validating NaCls
