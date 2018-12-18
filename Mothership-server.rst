@@ -73,16 +73,19 @@ Server options
 To provide options to mothership there are two possibilities:
 
 1. Launch parameters to ``mothership serve``. Options use the ``--<option>`` format.
-2. Options in config file: ``config_files/config.yaml`` supplied in a ``key: value``.
+2. Options in config file, default location: ``config_files/config.yaml`` supplied in a ``key: value``.
 
 Notable options are::
 
+      --name string                  Name that Mothership reports back
       --certfile string              Certificate file for TLS
       --clean                        <bool, optional> clean everything
       --keyfile string               Private key file for TLS
       --serverauth string            server auth method (default "none")
       --serverport string            port number (default "8080")
       --verboselogging               <bool, optional> verbose logging
+      --dockeroptions                Options to use when building in docker inside Mothership
+      --config                       Manually provided path to config file
 
 If you want to run the Mothership in Docker but want to change some of the default settings mentioned above, you just
 add :code:`serve` at the end, followed by the Mothership options you want to change or add:
@@ -101,7 +104,9 @@ add :code:`serve` at the end, followed by the Mothership options you want to cha
 Bobs and Builders
 -----------------
 
-In order to build images with specific versions of IncludeOS the was a need to create a new system. In addition there needed to be way to manage these different builders. Therefore the following terms have been introduced into Mothership:
+In order to build images with specific versions of IncludeOS there was a need to create a new system. In addition there needed to be a way to manage these different builders. Therefore the following terms have been introduced into Mothership:
+
+.. glossary::
 
 Builder
   A Builder is able to produce images with **one** specific version of IncludeOS. All Builders are by definition ready to be used.
@@ -109,30 +114,25 @@ Builder
 
     #. Build IncludeOS images
     #. Perform NaCl validation
+
 Bob
   A Bob is an abstraction for a resource that can become a Builder. In order for the Bob to become a Builder it needs to be prepared, this could mean it needs to be installed or downloaded.
+
 BobProvider
   A BobProvider is a resource which provides Bobs. These Bobs can be prepared to become Builders.
 
-Both Bobs and Builders have the following information
-
-.. glossary::
+Both Bobs and Builders have the following information:
 
     ID
       ID of the Bob/Builder. Used in all API calls when it is required to specify a bob/builder.
-
     Name
       Name of the Bob/Builder.
-
     Version
-      The version tag that IncludeOS images built with this Bob/Builder will report as it's version.
-
+      The version tag that IncludeOS images built with this Bob/Builder will report as its version.
     VcsRef
       The Git commit that the IncludeOS version was built from
-
     BuildDate
       The date of the last Git commit.
-
     ProviderID
       Which provider the Bob/Builder comes from.
 

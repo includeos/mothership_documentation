@@ -63,7 +63,7 @@ The options used are::
     Then the mothership options:
         mothership serve                    Start mothership server
 
-.. note:: If you are experiencing problems with permissions for the mounted resources you might need to launch the docker container with ``--privileged``. On systems like RedHat Enterprise Linux that use SELinux this might be necessary.
+.. note:: If you are experiencing problems with permissions for the mounted resources you might need to launch the docker container with ``--privileged``. On systems like RedHat Enterprise Linux that use SELinux this might be necessary. This will need to be sent to the inside as well by using ``--dockeroptions "--privileged"`` as a Mothership option as well. 
 
 This will launch the mothership server. Make sure there are no errors in the launch output and the following lines indicate that basic auth and TLS are properly configured::
 
