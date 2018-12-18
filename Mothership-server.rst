@@ -100,3 +100,80 @@ add :code:`serve` at the end, followed by the Mothership options you want to cha
 
 Bobs and Builders
 -----------------
+
+In order to build images with specific versions of IncludeOS the was a need to create a new system. In addition there needed to be way to manage these different builders. Therefore the following terms have been introduced into Mothership:
+
+Builder
+  A Builder is able to produce images with **one** specific version of IncludeOS. All Builders are by definition ready to be used.
+  The Builder is used to perform the following two actions:
+
+    #. Build IncludeOS images
+    #. Perform NaCl validation
+Bob
+  A Bob is an abstraction for a resource that can become a Builder. In order for the Bob to become a Builder it needs to be prepared, this could mean it needs to be installed or downloaded.
+BobProvider
+  A BobProvider is a resource which provides Bobs. These Bobs can be prepared to become Builders.
+
+Both Bobs and Builders have the following information
+
+.. glossary::
+
+    ID
+      ID of the Bob/Builder. Used in all API calls when it is required to specify a bob/builder.
+
+    Name
+      Name of the Bob/Builder.
+
+    Version
+      The version tag that IncludeOS images built with this Bob/Builder will report as it's version.
+
+    VcsRef
+      The Git commit that the IncludeOS version was built from
+
+    BuildDate
+      The date of the last Git commit.
+
+    ProviderID
+      Which provider the Bob/Builder comes from.
+
+Usage and examples
+~~~~~~~~~~~~~~~~~~
+
+Example 1: Preparing a Builder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In order to prepare a Builder the following tasks must be completed:
+
+  #. Get list of available BobProviders::
+
+      /v1/bobproviders
+
+  #. Update one of the bobproviders, here ``DockerHub`` is chosen::
+
+      /v1/bobproviders/DockerHub/update
+
+  #. Get list of available bobs from the ``DockerHub`` provider::
+
+      /v1/bobproviders/DockerHub/bobs
+
+  #. Prepare a specific Bob with ID ``idNum1`` and turn it into a Builder::
+
+      /v1/bobproviders/DockerHub/prepare/bobs/idNum1
+
+  #. Check list of Builders::
+
+      /v1/Builders
+
+
+Example 2: Building and validating NaCls
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To perform actions with a specific Builder the ID is required.
+
+If we wanted to build with the Builder from example 1 we would have to call::
+
+  /v1/images/build/services/Starbase/builders/idNum1
+
+To validate a NaCl the following endpoint would be called::
+
+  /v1/nacls/validate/builders/idNum1
