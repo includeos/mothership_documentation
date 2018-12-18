@@ -33,7 +33,7 @@ A link to this documentation can be found on the Support page of your Mothership
 .. note::
 
     When building an image or validating a NaCl, you must now provide the ID of an IncludeOS builder.
-    **Builders and Bobs** are new concepts that are introduced in this release and enables users to build
+    **Builders and Bobs** are new concepts that are introduced in this release and enable users to build
     with different IncludeOS versions at the same time. Each builder is a Docker container that contains a
     specific version of IncludeOS. For more information, see :ref:`bobs-and-builders`.
 
