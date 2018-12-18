@@ -19,7 +19,7 @@ using the HTTP "Accept" header. For example, to get (JSON) information about an 
 header to "application/json", but to download the actual binary image, set the "Accept" header to
 "application/octet-stream", etc.
 
-**Many endpoint have changed**. See the interactive API documentation for details about individual API calls.
+**Some endpoints have changed**. See the interactive API documentation for details about individual API calls.
 A link to this documentation can be found on the Support page of your Mothership.
 
 .. note::
