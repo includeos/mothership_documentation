@@ -5,8 +5,14 @@ Quick start
 
 Dependencies
 ------------
-- `Docker <https://docs.docker.com/install/>`__
-- `htpasswd <https://httpd.apache.org/docs/2.4/programs/htpasswd.html>`__
+
+============================================================================= =======================================================
+Tool                                                                           Usage
+============================================================================= =======================================================
+`docker <https://docs.docker.com/install>`__                                   Building IncludeOS
+`qemu-img <https://linux.die.net/man/1/qemu-img>`__                            Converting disk
+`htpasswd <https://httpd.apache.org/docs/2.4/programs/htpasswd.html>`__        Creating users. Often provided by the *apache-utils* package
+============================================================================= =======================================================
 
 1. Clone Git repository
 -----------------------
@@ -37,33 +43,15 @@ For instructions on how to generate a self-signed certificate for testing see: :
 
 .. _build_launch_mothership:
 
-4. Build and launch Mothership
+4. Launch Mothership
 ------------------------------
-First build then then run mothership using docker::
+Launch Mothership with the command::
 
-    $ docker build -t mothership .
-    $ docker run \
-        --name mothership \
-        -p 8080:8080 \
-        -p 9090:9090 \
-        -v $PWD/config_files:/home/ubuntu/mothership/config_files \
-        -v mothership_storage:/home/ubuntu/mothership/runtime_files \
-        -v /var/run/docker.sock:/var/run/docker.sock \
-        mothership serve
+  $ ./<mothership-binary> serve
 
-The options used are::
+To see all launch options run ``./<mothership-binary> serve -h`` or see :ref:`mothership-server-options`.
+To run Mothership inside a Docker container see :ref:`mothership-in-docker`.
 
-    First are the docker options:
-        --name mothership                   Give docker container name
-        -p 8080:8080                        Forward port 8080
-        -p 9090:9090                        Forward port 9090
-        -v $PWD/config_files:/home/ubuntu/mothership/config_files   Bind-mount config_files folder into mothership
-        -v mothership_storage:/home/ubuntu/mothership/runtime_files Mount named volume into mothership
-        -v /var/run/docker.sock:/var/run/docker.sock  Mount hosts docker process into container
-    Then the mothership options:
-        mothership serve                    Start mothership server
-
-.. note:: If you are experiencing problems with permissions for the mounted resources you might need to launch the docker container with ``--privileged``. On systems like RedHat Enterprise Linux that use SELinux this might be necessary. This will need to be sent to the inside as well by using ``--dockeroptions "--privileged"`` as a Mothership option as well. 
 
 This will launch the mothership server. Make sure there are no errors in the launch output and the following lines indicate that basic auth and TLS are properly configured::
 
@@ -85,6 +73,6 @@ Command-line interface
 
 Using the CLI the following command will give you information about the running instances::
 
-    $ ./mothership-linux-amd64 --username <username> --password <password> instances
+    $ ./<mothership-binary> --username <username> --password <password> instances
     Instances:
     Alias  Status  ID  Image Tag  Launched

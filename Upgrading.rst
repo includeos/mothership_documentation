@@ -3,13 +3,16 @@
 Upgrading Mothership
 =======================================
 
-When a new version of Mothership is available you will have to rebuild your Mothership docker image to go to the new version.
-
-Keeping all data intact
+Keeping all data
 -----------------------
-All the runtime data (images, NaCls, uplinks) used by Mothership is kept in the folder called ``runtime_files``. The :ref:`Quick-start` mounted this directory to a docker volume named ``mothership_storage``. If this volume is kept intact all the files will be used by the new version of Mothership.
+When upgrading to a new version of Mothership all configuration and runtime files are kept in two directories:
 
-The other set of data used is kept in the folder ``config_files``. This is mounted from the host and will therefore be intact as well.
+  ``config_files``
+    Contains all users and passwords, any TLS certificates and configuration files.
+  ``runtime_files``
+    All the runtime data (images, NaCls, uplinks, logs) used by Mothership.
+
+When stopping the Mothership make sure these two directories are kept intact.
 
 Pull changes
 ------------
@@ -22,19 +25,8 @@ or if you were using a specific ssh key::
 
     $ ssh-agent bash -c 'ssh-add mothership_beta.key; git pull'
 
-Build new Mothership
---------------------
-To build the new Mothership perform a docker build::
-
-    $ docker build -t mothership .
-
-Stop running Mothership
------------------------
-To stop and remove the running mothership simply perform::
-
-    $ docker stop mothership
-    $ docker rm mothership
-
 Start the new Mothership
 ------------------------
 To start Mothership with the new version use the same command as referenced in :ref:`Launch command <build_launch_mothership>`.
+
+If Docker is in use make sure the Docker container is rebuilt before launching the new Mothership. See :ref:`mothership-in-docker`
