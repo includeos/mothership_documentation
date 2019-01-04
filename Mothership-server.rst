@@ -67,6 +67,8 @@ following command:
 
 Then TLS will be disabled on both the API and uplink. You can choose whether you want to disable TLS on the Mothership API or the uplink (the connection between Mothership and the IncludeOS instances) or both.
 
+.. _mothership-server-options:
+
 Server options
 ~~~~~~~~~~~~~~
 
@@ -84,8 +86,40 @@ Notable options are::
       --serverauth string            server auth method (default "none")
       --serverport string            port number (default "8080")
       --verboselogging               <bool, optional> verbose logging
-      --dockeroptions                Options to use when building in docker inside Mothership
+      --dockeroptions                Options to use when building in Docker inside Mothership
       --config                       Manually provided path to config file
+
+
+.. _mothership-in-docker:
+
+Running in Docker
+~~~~~~~~~~~~~~~~~
+
+Mothership comes with a Dockerfile which includes necessary dependencies.
+
+First build and the run the Mothership Docker container::
+
+  $ docker build -t mothership .
+  $ docker run \
+    --name mothership \
+    -p 8080:8080 \
+    -p 9090:9090 \
+    -v $PWD/config_files:/home/ubuntu/mothership/config_files \
+    -v mothership_storage:/home/ubuntu/mothership/runtime_files \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    mothership serve
+
+The options used are::
+
+    First are the Docker options:
+        --name mothership                   Give Docker container name
+        -p 8080:8080                        Forward port 8080
+        -p 9090:9090                        Forward port 9090
+        -v $PWD/config_files:/home/ubuntu/mothership/config_files   Bind-mount config_files folder into mothership
+        -v mothership_storage:/home/ubuntu/mothership/runtime_files Mount named volume into mothership
+        -v /var/run/docker.sock:/var/run/docker.sock  Mount hosts Docker process into container
+    Then the mothership options:
+        mothership serve                    Start mothership server
 
 If you want to run the Mothership in Docker but want to change some of the default settings mentioned above, you just
 add :code:`serve` at the end, followed by the Mothership options you want to change or add:
@@ -98,6 +132,12 @@ add :code:`serve` at the end, followed by the Mothership options you want to cha
     -v /var/run/docker.sock:/var/run/docker.sock \
     mothership serve --verboselogging
 
+Docker in Docker
+^^^^^^^^^^^^^^^^
+
+Building IncludeOS images is performed by a Docker container. This is used to deliver a preconfigured build environment and makes it more convenient to release new IncludeOS versions. In order to allow for the Mothership to use Docker commands the servers Docker socket is mounted into the Docker container: ``-v /var/run/docker.sock:/var/run/docker.sock``.
+
+.. note:: If you are experiencing problems with permissions for the mounted resources you might need to launch the Docker container with ``--dockeroptions "--privileged"`` as a Mothership option as well.
 
 .. _bobs-and-builders:
 
