@@ -53,7 +53,7 @@ To see all launch options run ``./<mothership-binary> serve -h`` or see :ref:`mo
 To run Mothership inside a Docker container see :ref:`mothership-in-docker`.
 
 
-This will launch the mothership server. Make sure there are no errors in the launch output and the following lines indicate that basic auth and TLS are properly configured::
+This will launch the Mothership server. Make sure there are no errors in the launch output and the following lines indicate that basic auth and TLS are properly configured::
 
     INFO[0014] 1 registered user
     INFO[0014] Setting up hangar (uplink) with TLS on :9090

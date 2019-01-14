@@ -3,7 +3,7 @@
 Go Modules
 ----------
 
-With Go 1.11 Go modules is the new official way of handling dependencies. It is available as an experimental feature in Go 1.11 and will enabled by default starting with Go 1.12.
+With Go 1.11 Go modules is the new official way of handling dependencies. It is available as an experimental feature in Go 1.11 and will be enabled by default starting with Go 1.12.
 
 One of the main visible benefits is being able to keep the source files outside the ``$GOPATH``. If your Mothership repo is outside the GOPATH then go modules will be enabled by default.
 

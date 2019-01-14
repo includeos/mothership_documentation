@@ -5,7 +5,7 @@ Mothership server
 
 Configuration
 -------------
-All mothership configuration files should be placed in the folder: ``config_files``
+All Mothership configuration files should be placed in the folder: ``config_files``
 
 Setup authentication
 ~~~~~~~~~~~~~~~~~~~~
@@ -32,7 +32,7 @@ Create self-signed TLS certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you want to run your Mothership with TLS (this is default), you need to generate a certificate and a key file in
-your mothership directory:
+your Mothership directory:
 
 ::
 
@@ -72,7 +72,7 @@ Then TLS will be disabled on both the API and uplink. You can choose whether you
 Server options
 ~~~~~~~~~~~~~~
 
-To provide options to mothership there are two possibilities:
+To provide options to Mothership there are two possibilities:
 
 1. Launch parameters to ``mothership serve``. Options use the ``--<option>`` format.
 2. Options in config file, default location: ``config_files/config.yaml`` supplied in a ``key: value``.
@@ -118,7 +118,7 @@ The options used are::
         -v $PWD/config_files:/home/ubuntu/mothership/config_files   Bind-mount config_files folder into mothership
         -v mothership_storage:/home/ubuntu/mothership/runtime_files Mount named volume into mothership
         -v /var/run/docker.sock:/var/run/docker.sock  Mount hosts Docker process into container
-    Then the mothership options:
+    Then the Mothership options:
         mothership serve                    Start mothership server
 
 If you want to run the Mothership in Docker but want to change some of the default settings mentioned above, you just

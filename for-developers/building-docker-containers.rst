@@ -1,7 +1,7 @@
-Building IncludeOS docker containers
+Building IncludeOS Docker containers
 ------------------------------------
 
-To build your own docker container that can be used with Mothership use the following command::
+To build your own Docker container that can be used with Mothership use the following command::
 
   docker build \
   --label org.label-schema.build-date="$(git log -1 --format=%cd --date=iso8601-strict)" \
@@ -28,4 +28,4 @@ name
 vendor
   This gives the name of the organization that is providing this image.
 
-The final thing that can be changed is the :code:`includeos/builder` which is the name given to the image. When uploading to docker hub this is the name that is used to identify a docker hub repository.
+The final thing that can be changed is the :code:`includeos/builder` which is the name given to the image. When uploading to Docker hub this is the name that is used to identify a Docker hub repository.
