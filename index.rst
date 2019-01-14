@@ -1,7 +1,7 @@
 IncludeOS Mothership
 ====================
 
-Mothership is a management platform for IncludeOS applications currently in closed beta. 
+Mothership is a management platform for IncludeOS applications currently in closed beta.
 
 .. toctree::
    :maxdepth: 2
@@ -19,7 +19,7 @@ Mothership is a management platform for IncludeOS applications currently in clos
    :maxdepth: 2
    :caption: Developer documentation
 
-   For-developers
+   for-developers/index
    Mothership-server-for-developers
 
 ..

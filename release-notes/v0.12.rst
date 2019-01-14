@@ -41,5 +41,5 @@ GUI
 Internal improvements
 ~~~~~~~~~~~~~~~~~~~~~
 
-- Authentication, TLS and docker builder are default when starting Mothership
+- Authentication, TLS and Docker builder are default when starting Mothership
 - Improved logging
