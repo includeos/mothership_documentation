@@ -9,70 +9,94 @@ Your first IncludeOS instance
 1. Create a configuration for your instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Go to the NaCl page**
+**Go to the Images page**
 
-NaCl is a configuration language for IncludeOS. On the NaCl page you can find links to the language documentation and
+Here you get an overview of all your images and you can upload, delete or create a new image.
+
+.. image:: _static/images/images.png
+
+Click on the Create new-button. In the view that is displayed you can set a custom name of the image you
+would like to build and select the IncludeOS version, NaCl and uplink to build with.
+
+.. image:: _static/images/images-create-new.png
+
+**Expand the NaCl panel**
+
+NaCl is a configuration language for IncludeOS. In the NaCl panel you can find links to the language documentation and
 examples.
 
-.. image:: _static/images/nacl.png
+.. image:: _static/images/images-nacl-panel.png
 
-**Click on the Create new-button**
+**Write your NaCl configuration**
 
-.. image:: _static/images/nacl-create.png
+In the list on the right-hand side you have easy access to a set of NaCl code snippets.
+Click on the copy-button for the code snippet named 'Iface'. This will paste the NaCl you need for
+configuring an instance with one interface into the editor. Change the Iface values to fit your need.
+If you want the interface to get configured via DHCP, click on the code snippet named 'Iface dhcp'.
 
-**Click on the code snippet named Iface**
-
-This will paste the NaCl you need for configuring an instance with one interface. Change the Iface values to fit your
-need and give your NaCl file a name.
-
-.. image:: _static/images/nacl-create-with-content.png
+.. image:: _static/images/images-nacl-create-configuration.png
 
 **Click on the Validate-button to validate the NaCl content**
 
 If there are any errors in your NaCl configuration, an error icon will be displayed in the left margin of the line
 containing the error. When hovering this icon, the reason for the error will be displayed:
 
-.. image:: _static/images/nacl-create-with-error.png
+.. image:: _static/images/images-nacl-create-with-error.png
 
-**Click on the Save-button**
+**Save your NaCl**
 
-The newly created NaCl file is displayed in the list if the NaCl content doesn't contain any errors:
+Click on the Save as-button. A modal will be displayed where you can give your configuration a name and
+save it as a NaCl or a snippet. Give your NaCl a name and click on the Save as new NaCl-button.
 
-.. image:: _static/images/nacl-with-content.png
+.. image:: _static/images/images-nacl-create-modal.png
 
-2. Build your image
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If no errors occur, your NaCl will show up in the drop-down list and be the selected NaCl for your image.
 
-**Go to the Images page**
+.. image:: _static/images/images-nacl-create-with-content.png
 
-Click on the Create new-button.
+2. Select the uplink destination that your instance will connect to
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Here you will see that your newly created NaCl is displayed in the drop-down list:
-
-.. image:: _static/images/build.png
+**Expand the uplink panel**
 
 When building an image, information about the URL of the Mothership to connect to must be given. This is what we call
-an uplink. The default uplink that is created when starting a Mothership is set to be the IP of your Mothership and
-port 9090. You can view and edit the default uplink settings to your Mothership on the Settings page. Here you can also
-create other uplinks.
+an uplink. The initial uplink that is created when starting a Mothership is set to be the IP of your Mothership and
+port 9090. On the Create new image-page there is an uplink panel where you can select the uplink you want to use for
+your image.
 
-.. image:: _static/images/settings-uplinks-default.png
+.. image:: _static/images/images-uplink-panel.png
 
-On the Create new image-page you are asked if you want to use a custom uplink for this build. If the default uplink on the
-Settings page is the uplink you want to use, you don't need to check this. If you have another uplink you would like to
-use, however, check the box and a drop-down list containing the names of all your uplinks will be displayed. Choose one
-of these.
+You can create, view and edit uplinks on the Settings page.
+
+.. image:: _static/images/settings-uplinks.png
+
+3. Select the IncludeOS version to build with
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Expand the IncludeOS-builder panel**
+
+The latest version is pre-selected, but you can choose a different IncludeOS version in this panel.
+
+.. image:: _static/images/images-includeos-panel.png
+
+4. Build your image
+^^^^^^^^^^^^^^^^^^^
+
+You have now selected an IncludeOS version, a NaCl and an uplink for your new instance. You can also
+give your image a name and when booted up, the instance running this image will report the name.
+
+.. image:: _static/images/images-create-ready.png
 
 **Click on the Build button**
 
-The status of the build is displayed on the right-hand side.
+The status of the build is displayed in a modal.
 
-.. image:: _static/images/build-finished.png
+.. image:: _static/images/images-building.png
 
-If everything went well you will be sent back to the Images page and a confirmation box will appear saying that the image was successfully created.
-You will see your newly created image on the page.
+If everything went well you will be sent back to the Images page and a confirmation box will appear saying that
+the image was successfully built. You will see your newly created image on the page.
 
-.. image:: _static/images/images-with-content.png
+.. image:: _static/images/images-build-finished.png
 
 **Download the image**
 
@@ -82,70 +106,73 @@ You can click on the arrow to the left of each image for more information about 
 
 .. image:: _static/images/images-more.png
 
-3. Boot
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5. Boot
+^^^^^^^
 
 After you have downloaded the image, you can launch it on your preferred hypervisor (the
 :code:`./mothership launch --hypervisor <hypervisor> <ELF-binary>` command is useful here - see our
-:ref:`hypervisors` documentation), or you can boot it up locally:
-
-.. ip forwarding on if uplink 192...., else 10.0.0.1 f.ex.
-.. vm.json (net devices, specify uuid if booting locally on mac f.ex.)
+:ref:`hypervisors` documentation), or you can use the IncludeOS :code:`boot` command.
 
 ::
 
-    $ boot Starbase-nacl-0 --create-bridge
+    $ ./mothership launch --attach --hypervisor vmware my-instance
 
-.. image:: _static/images/boot-first-instance.png
+.. image:: _static/images/launch-first-instance.png
 
-On the Instances page, you will see your instance when it has successfully connected to the Mothership:
+**Go to the Instances page**
+
+On the Instances page, you will see your instance when it has connected to the Mothership:
 
 .. image:: _static/images/instances-with-content.png
-
-**Note:**
-
-IP forwarding must be turned on for your instances to connect to public IP addresses.
-To make the instance above (with address 10.0.0.45) connect to the Mothership on 192.168.0.13 f.ex., IP forwarding
-must be turned on.
-In addition, a bridge must be set up so that the instance with IP 10.0.0.45 can reach other networks.
-The :code:`--create-bridge` option given to the boot command above sets up a bridge for you, but to enable IP
-forwarding you have to run the following commands (on macOS):
-
-::
-
-    $ echo "nat on en0 from bridge43:network to any -> (en0)" > includeos-nat.conf
-    $ sudo sysctl -w net.inet.ip.forwarding=1
-    $ sudo pfctl -F all # flush all active rules
-    $ sudo pfctl -f includeos-nat.conf -e # enable pf
-
-An alternative to turning on IP forwarding in this case however (with a Mothership running on localhost), is to
-create an uplink with URL 10.0.0.1:9090 and build an image with that. Then you only need to run
-:code:`boot Starbase-nacl-0 --create-bridge`, and the instance will connect to the Mothership.
-You only need to add the :code:`--create-bridge` option once.
 
 
 Update your IncludeOS instance
 ------------------------------
 
-If you want to update your instance on Mothership, click on the **Manage** button.
-There you will see an overview of the instance with several tabs with more information.
+**Go to the Instances page**
+
+If you want to update your instance to run another image, click on the **Manage** button.
+On the management page for your instance you will get an overview of the instance, with several tabs containing
+more information.
+
+.. image:: _static/images/instances-manage.png
+
 Below the overview section, you will see two more sections:
 
   1. Running on instance
   2. Update instance
 
-The Running on instance-section will give you an overview of the image running on the instance, with information about uplink, IncludeOS version and NaCl information if this is known to the Mothership.
+The Running on instance-section will give you an overview of the image running on the instance, with information about
+uplink, IncludeOS version and NaCl information if this is known to the Mothership.
 
-.. image:: _static/images/instances-manage.png
+.. image:: _static/images/instances-running-on-instance.png
 
-**Click on Update instance**
+**Expand the Update instance panel**
 
-In the Update instance-panel, you will be able to choose how you want to update your instance.
+In the Update instance panel, you will be able to choose how you want to update your instance.
 
   1. Build & deploy a new image
 
-  This section allows you to choose IncludeOS version, NaCl and add a name for your new image.
+  This section allows you to build a new image and deploy it to your instance. Here you can choose an IncludeOS version,
+  configure a NaCl and give your new image a name, and after the image has been built it will automatically be
+  deployed to the instance.
 
-  2. The Deploy a previously built image-section allows you to select a previously built image. Choose an image from the drop-down list and click the Deploy-button.
+  2. Deploy a previously built image
+
+  In this section you can deploy one of your previously built or uploaded images to your instance.
+  Choose an image from the drop-down list and click on the Deploy-button.
 
 .. image:: _static/images/instances-update.png
+
+**Build & deploy a new image**
+
+Let's say you want to build and deploy a new image to your instance; Fill in your new image tag (if you want to change it),
+optionally choose another IncludeOS version, and select or create a new NaCl (here we've created a new NaCl, containing
+a Timer that makes the instance report CPU and memory usage together with a timestamp every 30 seconds).
+
+.. image:: _static/images/instances-build-and-deploy.png
+
+The information in the Running on instance panel will change after a successful deployment, and will display what is
+now running on the instance:
+
+.. image:: _static/images/instances-running-on-instance-after-upgrade.png
