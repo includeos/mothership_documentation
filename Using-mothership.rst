@@ -22,8 +22,8 @@ would like to build and select the IncludeOS version, NaCl and uplink to build w
 
 **Expand the NaCl panel**
 
-NaCl is a configuration language for IncludeOS. In the NaCl panel you can find links to the language documentation and
-examples.
+NaCl is a configuration language for IncludeOS. In the NaCl panel you can find links to the language
+documentation and examples.
 
 .. image:: _static/images/images-nacl-panel.png
 
@@ -61,8 +61,8 @@ If no errors occur, your NaCl will show up in the drop-down list and be the sele
 
 When building an image, information about the URL of the Mothership to connect to must be given. This is what we call
 an uplink. The initial uplink that is created when starting a Mothership is set to be the IP of your Mothership and
-port 9090. On the Create new image-page there is an uplink panel where you can select the uplink you want to use for
-your image.
+port 9090. On the Create new image-page there is an uplink panel where you can select the uplink you want to use
+for your image.
 
 .. image:: _static/images/images-uplink-panel.png
 
@@ -142,8 +142,8 @@ Below the overview section, you will see two more sections:
   1. Running on instance
   2. Update instance
 
-The Running on instance-section will give you an overview of the image running on the instance, with information about
-uplink, IncludeOS version and NaCl information if this is known to the Mothership.
+The Running on instance-section will give you an overview of the image running on the instance, with
+information about uplink, IncludeOS version and NaCl information if this is known to the Mothership.
 
 .. image:: _static/images/instances-running-on-instance.png
 
@@ -153,9 +153,9 @@ In the Update instance panel, you will be able to choose how you want to update 
 
   1. Build & deploy a new image
 
-  This section allows you to build a new image and deploy it to your instance. Here you can choose an IncludeOS version,
-  configure a NaCl and give your new image a name, and after the image has been built it will automatically be
-  deployed to the instance.
+  This section allows you to build a new image and deploy it to your instance. Here you can choose an
+  IncludeOS version, configure a NaCl and give your new image a name, and after the image has been
+  built it will automatically be deployed to the instance.
 
   2. Deploy a previously built image
 
@@ -166,13 +166,14 @@ In the Update instance panel, you will be able to choose how you want to update 
 
 **Build & deploy a new image**
 
-Let's say you want to build and deploy a new image to your instance; Fill in your new image tag (if you want to change it),
-optionally choose another IncludeOS version, and select or create a new NaCl (here we've created a new NaCl, containing
-a Timer that makes the instance report CPU and memory usage together with a timestamp every 30 seconds).
+Let's say you want to build and deploy a new image to your instance; Fill in your new image tag
+(if you want to change it), optionally choose another IncludeOS version, and select or create a
+new NaCl (here we've created a new NaCl, containing a Timer that makes the instance report CPU
+and memory usage together with a timestamp every 30 seconds).
 
 .. image:: _static/images/instances-build-and-deploy.png
 
-The information in the Running on instance panel will change after a successful deployment, and will display what is
-now running on the instance:
+The information in the Running on instance panel will change after a successful deployment, and
+will display what is now running on the instance:
 
 .. image:: _static/images/instances-running-on-instance-after-upgrade.png
