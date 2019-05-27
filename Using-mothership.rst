@@ -121,7 +121,8 @@ After you have downloaded the image, you can launch it on your preferred hypervi
 
 **Go to the Instances page**
 
-On the Instances page, you will see your instance when it has connected to the Mothership:
+On the Instances page, you will see your instance when it has connected to the Mothership.
+You can give it an alias on the instance's management page.
 
 .. image:: _static/images/instances-with-content.png
 
@@ -131,7 +132,7 @@ Update your IncludeOS instance
 
 **Go to the Instances page**
 
-If you want to update your instance to run another image, click on the **Manage** button.
+If you want to update your instance to run another image, click on the Manage-button.
 On the management page for your instance you will get an overview of the instance, with several tabs containing
 more information.
 
